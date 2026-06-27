@@ -218,17 +218,35 @@ function initHandbookLeadForm() {
     }
   };
 
+  let isSubmitting = false;
+
   const handleSubmit = async event => {
     event.preventDefault();
 
-    const email = String(form.elements.email?.value || "").trim();
-    const consent = form.elements.consent?.checked;
-
-    if (!email || !consent) {
-      setStatus("Please enter a valid email and accept updates to get the handbook.", "warning");
+    if (isSubmitting) {
       return;
     }
 
+    const endpoint = form.dataset.endpoint || form.action;
+    if (!endpoint || /your-form-id|example\.com/i.test(endpoint)) {
+      setStatus("Form endpoint is not configured yet. Please update the provider endpoint.", "error");
+      return;
+    }
+
+    const email = String(form.elements.email?.value || "").trim();
+    const firstName = String(form.elements.firstName?.value || "").trim();
+    const consent = form.elements.consent?.checked;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!firstName || !emailPattern.test(email) || !consent) {
+      setStatus(
+        "Please enter your first name, a valid email, and accept updates to get the handbook.",
+        "warning"
+      );
+      return;
+    }
+
+    isSubmitting = true;
     setStatus("Submitting your request...", "neutral");
     if (submitButton) {
       submitButton.disabled = true;
@@ -236,24 +254,40 @@ function initHandbookLeadForm() {
     }
 
     try {
-      const endpoint = form.dataset.endpoint || form.action;
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 15000);
+      const payload = new FormData(form);
+      payload.set("email", email);
+      payload.set("firstName", firstName);
+      payload.set("_origin", window.location.href);
+
       const response = await fetch(endpoint, {
         method: "POST",
         headers: {
           Accept: "application/json"
         },
-        body: new FormData(form)
+        body: payload,
+        signal: controller.signal
       });
+      clearTimeout(timeoutId);
 
-      const payload = await response.json().catch(() => ({}));
+      const providerResponse = await response.json().catch(() => ({}));
 
       if (!response.ok) {
         throw new Error(`HTTP ${response.status}`);
       }
 
-      if (String(payload.success).toLowerCase() !== "true") {
+      if (String(providerResponse.success).toLowerCase() !== "true") {
+        const providerMessage = String(providerResponse.message || "").toLowerCase();
+        if (providerMessage.includes("activate") || providerMessage.includes("activation")) {
+          setStatus(
+            "Almost there. Check the Gmail inbox for the FormSubmit activation email, then click Activate Form.",
+            "warning"
+          );
+          return;
+        }
         const activationMessage =
-          "Almost there. Form activation is still pending. Please open the FormSubmit activation email and click Activate Form.";
+          "Submission is not active yet. Please complete provider activation and try again.";
         setStatus(activationMessage, "warning");
         return;
       }
@@ -266,6 +300,7 @@ function initHandbookLeadForm() {
     } catch (error) {
       setStatus("We could not submit right now. Please try again in a moment.", "error");
     } finally {
+      isSubmitting = false;
       if (submitButton) {
         submitButton.disabled = false;
         submitButton.textContent = "Send Me The ADU Handbook";
