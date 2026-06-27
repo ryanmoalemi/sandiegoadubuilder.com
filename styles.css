@@ -233,18 +233,47 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 0.5rem;
+  gap: 0.7rem;
   padding: 1rem;
   box-shadow: var(--shadow);
 }
 
+.ba-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+.ba-shot {
+  margin: 0;
+  position: relative;
+}
+
 .project-photo {
   width: 100%;
-  height: 150px;
+  height: 132px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.28);
-  margin-bottom: 0.2rem;
+  margin-bottom: 0;
+}
+
+.ba-shot.before .project-photo {
+  filter: grayscale(100%) contrast(90%) brightness(80%);
+}
+
+.ba-shot figcaption {
+  position: absolute;
+  left: 0.45rem;
+  top: 0.45rem;
+  background: rgba(0, 0, 0, 0.64);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 0.2rem 0.52rem;
 }
 
 .project-title {
@@ -253,9 +282,29 @@ p {
 
 .project p {
   margin: 0;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   line-height: 1.35;
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.project-cta {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.83rem;
+  border: 1px solid rgba(255, 255, 255, 0.46);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  padding: 0.45rem 0.8rem;
+}
+
+.project-cta:hover {
+  background: rgba(255, 255, 255, 0.26);
 }
 
 .project-actions {
