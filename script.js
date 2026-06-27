@@ -224,7 +224,8 @@ function initHandbookLeadForm() {
     }
 
     try {
-      const response = await fetch(form.action, {
+      const endpoint = form.dataset.endpoint || form.action;
+      const response = await fetch(endpoint, {
         method: "POST",
         headers: {
           Accept: "application/json"
@@ -232,8 +233,17 @@ function initHandbookLeadForm() {
         body: new FormData(form)
       });
 
+      const payload = await response.json().catch(() => ({}));
+
       if (!response.ok) {
         throw new Error(`HTTP ${response.status}`);
+      }
+
+      if (String(payload.success).toLowerCase() !== "true") {
+        const activationMessage =
+          "Form activation is still pending. Please open the activation email sent by FormSubmit and click Activate Form.";
+        status.textContent = payload.message ? `${activationMessage}` : activationMessage;
+        return;
       }
 
       form.reset();
