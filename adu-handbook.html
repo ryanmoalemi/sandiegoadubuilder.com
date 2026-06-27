@@ -71,7 +71,8 @@
             class="handbook-form"
             action=""
             data-endpoint="https://formsubmit.co/ajax/hello@sandiegoadubuilder.com"
-            method="POST"
+            method="GET"
+            onsubmit="return false"
           >
             <input type="hidden" name="_subject" value="New ADU Handbook Lead" />
             <input type="hidden" name="_captcha" value="false" />
@@ -99,7 +100,7 @@
               I agree to receive ADU planning updates and handbook follow-up by email.
             </label>
 
-            <button type="submit" class="btn">Send Me The ADU Handbook</button>
+            <button type="button" class="btn" id="handbook-submit-btn">Send Me The ADU Handbook</button>
             <p id="handbook-form-status" class="estimate-note" aria-live="polite"></p>
           </form>
         </aside>

@@ -201,16 +201,16 @@ renderAduMonthlyUpdates();
 function initHandbookLeadForm() {
   const form = document.getElementById("handbook-lead-form");
   const status = document.getElementById("handbook-form-status");
+  const submitButton = document.getElementById("handbook-submit-btn");
   if (!form || !status) {
     return;
   }
 
-  form.addEventListener("submit", async event => {
+  const handleSubmit = async event => {
     event.preventDefault();
 
     const email = String(form.elements.email?.value || "").trim();
     const consent = form.elements.consent?.checked;
-    const submitButton = form.querySelector('button[type="submit"]');
 
     if (!email || !consent) {
       status.textContent = "Please enter a valid email and accept updates to get the handbook.";
@@ -256,7 +256,12 @@ function initHandbookLeadForm() {
         submitButton.textContent = "Send Me The ADU Handbook";
       }
     }
-  });
+  };
+
+  form.addEventListener("submit", handleSubmit);
+  if (submitButton) {
+    submitButton.addEventListener("click", handleSubmit);
+  }
 }
 
 initHandbookLeadForm();
