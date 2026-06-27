@@ -308,6 +308,54 @@ p {
   margin-top: 1rem;
 }
 
+.adu-widget {
+  border: 1px solid #b9d9ce;
+  background: linear-gradient(135deg, #f4fbf7 0%, #e8f5ef 100%);
+}
+
+.adu-widget-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.adu-badge {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  color: #fff;
+  background: linear-gradient(120deg, #19815f, #0f5e46);
+  padding: 0.3rem 0.62rem;
+}
+
+.adu-widget-sub {
+  margin-top: 0.3rem;
+  color: #355b53;
+}
+
+.adu-updates-list {
+  margin: 0.8rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.adu-updates-list li {
+  margin-bottom: 0.45rem;
+}
+
+.adu-updates-list a {
+  color: #0f5e46;
+  font-weight: 600;
+}
+
+.adu-updates-meta {
+  margin-top: 0.55rem;
+  color: #43675f;
+  font-size: 0.84rem;
+}
+
 .adu-block p {
   color: var(--muted);
 }

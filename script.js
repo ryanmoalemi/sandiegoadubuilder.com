@@ -145,3 +145,48 @@ const observer = new IntersectionObserver(
 );
 
 document.querySelectorAll(".reveal").forEach(node => observer.observe(node));
+
+async function renderAduMonthlyUpdates() {
+  const list = document.getElementById("adu-updates-list");
+  const meta = document.getElementById("adu-updates-meta");
+  if (!list) {
+    return;
+  }
+
+  try {
+    const response = await fetch(`adu-updates.json?v=${Date.now()}`);
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+
+    const payload = await response.json();
+    const items = Array.isArray(payload.items) ? payload.items.slice(0, 8) : [];
+
+    if (items.length === 0) {
+      list.innerHTML = "<li>No confirmed updates were detected for this month yet.</li>";
+    } else {
+      list.innerHTML = items
+        .map(
+          item =>
+            `<li><a href="${item.url}" target="_blank" rel="noopener noreferrer">${item.title}</a> <span>(${item.source})</span></li>`
+        )
+        .join("");
+    }
+
+    if (meta) {
+      const generated = payload.generatedAt ? new Date(payload.generatedAt) : null;
+      const generatedText = generated && !Number.isNaN(generated.getTime())
+        ? generated.toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" })
+        : "Unknown";
+      meta.textContent = `Last widget refresh: ${generatedText}`;
+    }
+  } catch (error) {
+    list.innerHTML =
+      "<li>Widget temporarily unavailable. Please use the official source links below.</li>";
+    if (meta) {
+      meta.textContent = "Last widget refresh: unavailable";
+    }
+  }
+}
+
+renderAduMonthlyUpdates();
