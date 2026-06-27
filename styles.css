@@ -269,6 +269,72 @@ p {
   color: var(--muted);
 }
 
+.project-page {
+  padding: 3rem 0;
+}
+
+.project-back {
+  margin-bottom: 1rem;
+  display: inline-block;
+  color: var(--brand-dark);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.project-meta {
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.project-layout {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 1rem;
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.project-gallery figure {
+  margin: 0;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.project-gallery img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-gallery figcaption {
+  font-size: 0.82rem;
+  color: var(--muted);
+  padding: 0.55rem 0.65rem;
+}
+
+.project-details {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+.project-details ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.project-details li {
+  margin-bottom: 0.35rem;
+}
+
 .p1 {
   background: linear-gradient(160deg, #245043, #132f28);
 }
@@ -405,6 +471,11 @@ p {
   .project-grid,
   .hero-stats,
   .estimator-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .project-layout,
+  .project-gallery {
     grid-template-columns: 1fr;
   }
 
