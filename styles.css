@@ -249,24 +249,36 @@ p {
   color: rgba(255, 255, 255, 0.92);
 }
 
+.project-actions {
+  margin-top: 0.4rem;
+}
+
+.project-actions a {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 999px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.7rem;
+}
+
 .projects-note {
   margin-top: 0.2rem;
   color: var(--muted);
 }
 
 .p1 {
-  background: linear-gradient(160deg, rgba(14, 47, 39, 0.3), rgba(14, 47, 39, 0.8)),
-    url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80") center/cover;
+  background: linear-gradient(160deg, #245043, #132f28);
 }
 
 .p2 {
-  background: linear-gradient(160deg, rgba(14, 47, 39, 0.3), rgba(14, 47, 39, 0.8)),
-    url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80") center/cover;
+  background: linear-gradient(160deg, #355a49, #1a3228);
 }
 
 .p3 {
-  background: linear-gradient(160deg, rgba(14, 47, 39, 0.3), rgba(14, 47, 39, 0.8)),
-    url("https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=900&q=80") center/cover;
+  background: linear-gradient(160deg, #6a6040, #3b3323);
 }
 
 .estimator-wrap {
