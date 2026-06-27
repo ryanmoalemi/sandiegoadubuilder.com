@@ -296,6 +296,50 @@ p {
   color: var(--muted);
 }
 
+.adu-section .hero-cta {
+  margin-top: 1rem;
+}
+
+.adu-hub {
+  padding-top: 5.2rem;
+}
+
+.adu-block {
+  margin-top: 1rem;
+}
+
+.adu-block p {
+  color: var(--muted);
+}
+
+.adu-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.adu-photo-grid figure {
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--line);
+}
+
+.adu-photo-grid img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+.adu-photo-grid figcaption {
+  color: var(--muted);
+  font-size: 0.86rem;
+  padding: 0.6rem 0.75rem;
+}
+
 .project-page {
   padding: 3rem 0;
 }
@@ -502,7 +546,8 @@ p {
   }
 
   .project-layout,
-  .project-gallery {
+  .project-gallery,
+  .adu-photo-grid {
     grid-template-columns: 1fr;
   }
 
