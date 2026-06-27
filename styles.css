@@ -200,6 +200,12 @@ p {
   color: var(--muted);
 }
 
+.section-note {
+  margin-top: 1rem;
+  color: var(--muted);
+  max-width: 78ch;
+}
+
 .timeline {
   margin: 1rem 0 0;
   padding: 0;
