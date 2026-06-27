@@ -41,27 +41,42 @@
       <a class="project-back" href="index.html">← Back to Home</a>
 
       <section class="handbook-hero reveal in">
-        <div>
-          <p class="eyebrow">Free Resource</p>
+        <div class="handbook-left">
+          <p class="eyebrow">Free Planning Resource</p>
           <h1>ADU Handbook</h1>
           <p class="lead">
-            Our branded ADU Handbook helps San Diego homeowners plan smarter with a practical,
-            plain-English roadmap from concept through permit and construction.
+            A branded, high-clarity planning guide for San Diego homeowners who want to avoid
+            expensive missteps before design, permit submittal, and construction.
           </p>
-          <ul class="handbook-value-list">
-            <li>San Diego planning and permit workflow overview</li>
-            <li>Budget planning ranges and cost risk checklist</li>
-            <li>Design and site-readiness checklist before submittal</li>
-            <li>Construction sequencing and owner decision points</li>
-          </ul>
+          <div class="handbook-proof-strip">
+            <span>Built for San Diego homeowners</span>
+            <span>Fast-read format</span>
+            <span>Action checklists included</span>
+          </div>
+          <div class="handbook-cover-mock">
+            <p>San Diego ADU Builder</p>
+            <h2>ADU Handbook</h2>
+            <p>Planning, Permits, Budget, And Build Roadmap</p>
+          </div>
         </div>
 
         <aside class="card handbook-signup-card">
+          <p class="handbook-card-eyebrow">Download Access</p>
           <h2>Get The Handbook</h2>
-          <p>
-            Enter your email and we will send your ADU Handbook access details.
+          <p class="handbook-card-copy">
+            Enter your details below and we will email your handbook access instructions.
           </p>
-          <form id="handbook-lead-form" class="handbook-form">
+          <form
+            id="handbook-lead-form"
+            class="handbook-form"
+            action="https://formsubmit.co/hello@sandiegoadubuilder.com"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="New ADU Handbook Lead" />
+            <input type="hidden" name="_next" value="https://sandiegoadubuilder.com/adu-handbook.html?submitted=1" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="handbook-honey" />
+
             <label for="firstName">First name</label>
             <input id="firstName" name="firstName" type="text" placeholder="Your first name" />
 
@@ -69,7 +84,7 @@
             <input id="email" name="email" type="email" placeholder="you@example.com" required />
 
             <label for="stage">Project stage</label>
-            <select id="stage" name="stage">
+            <select id="stage" name="projectStage">
               <option value="">Select one</option>
               <option value="Just researching">Just researching</option>
               <option value="Ready for feasibility">Ready for feasibility</option>
@@ -88,28 +103,53 @@
         </aside>
       </section>
 
+      <section class="card handbook-highlight-bar reveal in">
+        <p><strong>What you will walk away with:</strong> a practical game plan for ADU feasibility, permit sequencing, budget guardrails, and owner decisions that protect timeline and cost.</p>
+      </section>
+
       <section class="section reveal in">
         <h2>What Is Inside</h2>
         <div class="grid cards handbook-cards">
           <article class="card">
             <h3>1. Feasibility And Site Fit</h3>
             <p>
-              A clear framework for evaluating lot constraints, utility strategy, and the ADU type
-              that best fits your property goals.
+              A quick property screen to validate lot constraints, utility path, and ADU strategy
+              before you spend on full design.
             </p>
           </article>
           <article class="card">
-            <h3>2. Permit And Plan Workflow</h3>
+            <h3>2. Permit Sequence</h3>
             <p>
-              Step-by-step guidance on how design, engineering, and permit milestones stack up so
-              you can avoid avoidable delays.
+              A step-by-step permit roadmap showing what comes first, who prepares what, and where
+              projects most commonly lose momentum.
             </p>
           </article>
           <article class="card">
             <h3>3. Budget Guardrails</h3>
             <p>
-              Cost buckets, risk items, and budgeting checkpoints to help you set realistic
-              expectations before committing.
+              The cost framework we use to set realistic planning ranges, including sitework,
+              utilities, soft costs, and contingency.
+            </p>
+          </article>
+          <article class="card">
+            <h3>4. Design Decision Checklist</h3>
+            <p>
+              Key choices that impact construction speed and price so you avoid redesign loops
+              during permit review.
+            </p>
+          </article>
+          <article class="card">
+            <h3>5. Build Prep Timeline</h3>
+            <p>
+              A concise timeline from pre-design through handoff so you know what to expect at each
+              milestone.
+            </p>
+          </article>
+          <article class="card">
+            <h3>6. Owner Readiness Scorecard</h3>
+            <p>
+              A final readiness checklist to help you decide whether to move into design now or
+              complete missing prep first.
             </p>
           </article>
         </div>

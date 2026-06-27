@@ -499,9 +499,70 @@ p {
 
 .handbook-hero {
   display: grid;
-  grid-template-columns: 1.2fr 0.9fr;
+  grid-template-columns: 1.1fr 0.9fr;
   gap: 1rem;
   align-items: start;
+}
+
+.handbook-left {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.handbook-proof-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.handbook-proof-strip span {
+  border: 1px solid #bed8ce;
+  background: #edf7f3;
+  color: #1e5d4c;
+  border-radius: 999px;
+  padding: 0.28rem 0.62rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.handbook-cover-mock {
+  margin-top: 0.15rem;
+  border-radius: 18px;
+  border: 1px solid #13493c;
+  background: linear-gradient(145deg, #1c6c56, #0e392f);
+  color: #f3f7f5;
+  padding: 1.2rem;
+  box-shadow: 0 20px 46px rgba(14, 57, 47, 0.25);
+}
+
+.handbook-cover-mock p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+.handbook-cover-mock h2 {
+  margin: 0.2rem 0 0.4rem;
+  font-size: clamp(1.8rem, 3.3vw, 2.5rem);
+}
+
+.handbook-signup-card {
+  border: 1px solid #0f4f3f;
+  background: linear-gradient(180deg, #ffffff 0%, #f7fcfa 100%);
+  box-shadow: 0 16px 36px rgba(16, 56, 47, 0.14);
+}
+
+.handbook-card-eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #1b6550;
+  font-size: 0.73rem;
+  font-weight: 700;
+}
+
+.handbook-card-copy {
+  color: var(--muted);
+  margin-top: 0.25rem;
 }
 
 .handbook-value-list {
@@ -522,6 +583,7 @@ p {
 
 .handbook-signup-card h2 {
   margin-bottom: 0.4rem;
+  margin-top: 0.25rem;
 }
 
 .handbook-form {
@@ -539,6 +601,11 @@ p {
   background: #fff;
 }
 
+.handbook-honey {
+  position: absolute;
+  left: -9999px;
+}
+
 .handbook-consent {
   display: flex;
   align-items: start;
@@ -553,6 +620,16 @@ p {
 
 .handbook-cards {
   margin-top: 0.9rem;
+}
+
+.handbook-highlight-bar {
+  margin-top: 1rem;
+  border: 1px solid #c7d8d2;
+  background: linear-gradient(120deg, #f8f8f4, #eef8f3);
+}
+
+.handbook-highlight-bar p {
+  color: #2f4742;
 }
 
 .handbook-disclaimer {

@@ -201,30 +201,34 @@ renderAduMonthlyUpdates();
 function initHandbookLeadForm() {
   const form = document.getElementById("handbook-lead-form");
   const status = document.getElementById("handbook-form-status");
+  const params = new URLSearchParams(window.location.search);
+  if (status && params.get("submitted") === "1") {
+    status.textContent = "Thanks. Your request was submitted. Please check your inbox for the ADU Handbook email.";
+    if (window.history?.replaceState) {
+      window.history.replaceState({}, "", window.location.pathname);
+    }
+  }
+
   if (!form || !status) {
     return;
   }
 
   form.addEventListener("submit", event => {
-    event.preventDefault();
-
-    const firstName = String(form.elements.firstName?.value || "").trim();
     const email = String(form.elements.email?.value || "").trim();
-    const stage = String(form.elements.stage?.value || "").trim();
     const consent = form.elements.consent?.checked;
+    const submitButton = form.querySelector('button[type="submit"]');
 
     if (!email || !consent) {
       status.textContent = "Please enter a valid email and accept updates to get the handbook.";
+      event.preventDefault();
       return;
     }
 
-    const subject = encodeURIComponent("ADU Handbook Request");
-    const body = encodeURIComponent(
-      `Please send me the ADU Handbook.\n\nName: ${firstName || "Not provided"}\nEmail: ${email}\nProject stage: ${stage || "Not provided"}`
-    );
-
-    status.textContent = "Thanks. Opening your email app so we can send your handbook.";
-    window.location.href = `mailto:hello@sandiegoadubuilder.com?subject=${subject}&body=${body}`;
+    status.textContent = "Submitting your request...";
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+    }
   });
 }
 
