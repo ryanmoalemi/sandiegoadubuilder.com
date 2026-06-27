@@ -294,7 +294,7 @@ function initHandbookLeadForm() {
 
       form.reset();
       setStatus(
-        "Your Handbook is in your inbox. Use the permit roadmap inside to avoid the top 3 ADU approval delays homeowners hit first.",
+        "Your branded ADU Handbook PDF is in your inbox. Use the permit roadmap inside to avoid the top 3 ADU approval delays homeowners hit first.",
         "success"
       );
     } catch (error) {
