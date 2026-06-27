@@ -304,8 +304,50 @@ p {
   padding-top: 5.2rem;
 }
 
+.adu-hub h1 {
+  max-width: 18ch;
+}
+
+.adu-jump-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 1rem 0 0.2rem;
+}
+
+.adu-jump-links a {
+  text-decoration: none;
+  color: var(--brand-dark);
+  border: 1px solid #b8d3c8;
+  background: #eef8f3;
+  border-radius: 999px;
+  padding: 0.36rem 0.72rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.adu-jump-links a:hover {
+  background: #e0f1e9;
+}
+
 .adu-block {
   margin-top: 1rem;
+  padding: 1.25rem;
+  border-radius: 14px;
+}
+
+.adu-block h2 {
+  font-size: clamp(1.5rem, 2.9vw, 2.25rem);
+}
+
+.adu-content-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.adu-content-grid .adu-block {
+  margin-top: 0;
 }
 
 .adu-widget {
@@ -375,6 +417,52 @@ p {
 
 .adu-block p {
   color: var(--muted);
+}
+
+.adu-block ul {
+  margin: 0.8rem 0 0;
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.52rem;
+}
+
+.adu-block ul li {
+  position: relative;
+  padding-left: 1rem;
+  color: var(--muted);
+}
+
+.adu-block ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.58em;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 999px;
+  background: #2f8d73;
+}
+
+.adu-block .timeline {
+  margin-top: 0.8rem;
+}
+
+.adu-block .timeline li {
+  padding: 0.85rem;
+  background: rgba(255, 255, 255, 0.66);
+}
+
+.adu-block .timeline h3 {
+  font-size: 1.1rem;
+}
+
+.adu-block .cards {
+  margin-top: 0.8rem;
+}
+
+.adu-block .cards .card {
+  background: rgba(255, 255, 255, 0.72);
 }
 
 .adu-photo-grid {
@@ -612,8 +700,17 @@ p {
 
   .project-layout,
   .project-gallery,
-  .adu-photo-grid {
+  .adu-photo-grid,
+  .adu-content-grid {
     grid-template-columns: 1fr;
+  }
+
+  .adu-jump-links {
+    gap: 0.45rem;
+  }
+
+  .adu-jump-links a {
+    font-size: 0.82rem;
   }
 
   .footer-wrap {
