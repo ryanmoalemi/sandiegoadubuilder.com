@@ -201,26 +201,19 @@ renderAduMonthlyUpdates();
 function initHandbookLeadForm() {
   const form = document.getElementById("handbook-lead-form");
   const status = document.getElementById("handbook-form-status");
-  const params = new URLSearchParams(window.location.search);
-  if (status && params.get("submitted") === "1") {
-    status.textContent = "Thanks. Your request was submitted. Please check your inbox (and spam/promotions) for the ADU Handbook confirmation email.";
-    if (window.history?.replaceState) {
-      window.history.replaceState({}, "", window.location.pathname);
-    }
-  }
-
   if (!form || !status) {
     return;
   }
 
-  form.addEventListener("submit", event => {
+  form.addEventListener("submit", async event => {
+    event.preventDefault();
+
     const email = String(form.elements.email?.value || "").trim();
     const consent = form.elements.consent?.checked;
     const submitButton = form.querySelector('button[type="submit"]');
 
     if (!email || !consent) {
       status.textContent = "Please enter a valid email and accept updates to get the handbook.";
-      event.preventDefault();
       return;
     }
 
@@ -228,6 +221,30 @@ function initHandbookLeadForm() {
     if (submitButton) {
       submitButton.disabled = true;
       submitButton.textContent = "Sending...";
+    }
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        headers: {
+          Accept: "application/json"
+        },
+        body: new FormData(form)
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+
+      form.reset();
+      status.textContent = "Thank you. Your request is in and we will send your ADU Handbook details soon.";
+    } catch (error) {
+      status.textContent = "We could not submit right now. Please try again in a moment.";
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = "Send Me The ADU Handbook";
+      }
     }
   });
 }
