@@ -206,6 +206,18 @@ function initHandbookLeadForm() {
     return;
   }
 
+  const setStatus = (message, tone = "neutral") => {
+    status.textContent = message;
+    status.classList.remove("is-success", "is-warning", "is-error");
+    if (tone === "success") {
+      status.classList.add("is-success");
+    } else if (tone === "warning") {
+      status.classList.add("is-warning");
+    } else if (tone === "error") {
+      status.classList.add("is-error");
+    }
+  };
+
   const handleSubmit = async event => {
     event.preventDefault();
 
@@ -213,11 +225,11 @@ function initHandbookLeadForm() {
     const consent = form.elements.consent?.checked;
 
     if (!email || !consent) {
-      status.textContent = "Please enter a valid email and accept updates to get the handbook.";
+      setStatus("Please enter a valid email and accept updates to get the handbook.", "warning");
       return;
     }
 
-    status.textContent = "Submitting your request...";
+    setStatus("Submitting your request...", "neutral");
     if (submitButton) {
       submitButton.disabled = true;
       submitButton.textContent = "Sending...";
@@ -241,15 +253,18 @@ function initHandbookLeadForm() {
 
       if (String(payload.success).toLowerCase() !== "true") {
         const activationMessage =
-          "Form activation is still pending. Please open the activation email sent by FormSubmit and click Activate Form.";
-        status.textContent = payload.message ? `${activationMessage}` : activationMessage;
+          "Almost there. Form activation is still pending. Please open the FormSubmit activation email and click Activate Form.";
+        setStatus(activationMessage, "warning");
         return;
       }
 
       form.reset();
-      status.textContent = "Thank you. Your request is in and we will send your ADU Handbook details soon.";
+      setStatus(
+        "Your Handbook is in your inbox. Use the permit roadmap inside to avoid the top 3 approval delays homeowners hit first.",
+        "success"
+      );
     } catch (error) {
-      status.textContent = "We could not submit right now. Please try again in a moment.";
+      setStatus("We could not submit right now. Please try again in a moment.", "error");
     } finally {
       if (submitButton) {
         submitButton.disabled = false;

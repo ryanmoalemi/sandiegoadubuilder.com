@@ -754,6 +754,32 @@ p {
   font-size: 0.86rem;
 }
 
+#handbook-form-status {
+  margin-top: 0.35rem;
+  padding: 0.55rem 0.65rem;
+  border-radius: 10px;
+  border: 1px solid #d5d5d0;
+  background: #f7f7f3;
+}
+
+#handbook-form-status.is-success {
+  border-color: #9fd2bf;
+  background: #eaf8f2;
+  color: #14503f;
+}
+
+#handbook-form-status.is-warning {
+  border-color: #e4cea0;
+  background: #fff7e6;
+  color: #6e4e1e;
+}
+
+#handbook-form-status.is-error {
+  border-color: #dfb1b1;
+  background: #fff0f0;
+  color: #7c2b2b;
+}
+
 .contact {
   text-align: center;
 }
