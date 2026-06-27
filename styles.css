@@ -251,6 +251,9 @@ p {
 
 .project-actions {
   margin-top: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 .project-actions a {
