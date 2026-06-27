@@ -780,6 +780,17 @@ p {
   color: #7c2b2b;
 }
 
+.handbook-direct-download {
+  margin-top: 0.2rem;
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+
+.handbook-direct-download a {
+  color: var(--brand-dark);
+  font-weight: 600;
+}
+
 .contact {
   text-align: center;
 }
