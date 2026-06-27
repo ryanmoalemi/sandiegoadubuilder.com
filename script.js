@@ -47,12 +47,19 @@ function toCurrency(value) {
 }
 
 function calculateEstimate() {
-  const size = Number(document.getElementById("size").value);
-  const type = document.getElementById("type").value;
-  const finish = document.getElementById("finish").value;
-  const site = document.getElementById("site").value;
-  const utility = document.getElementById("utility").value;
-  const bathrooms = document.getElementById("bathrooms").value;
+  const sizeInput = document.getElementById("size");
+  const typeInput = document.getElementById("type");
+  const finishInput = document.getElementById("finish");
+  const siteInput = document.getElementById("site");
+  const utilityInput = document.getElementById("utility");
+  const bathroomsInput = document.getElementById("bathrooms");
+
+  const size = Number(sizeInput?.value || 650);
+  const type = typeInput?.value || "detached";
+  const finish = finishInput?.value || "standard";
+  const site = siteInput?.value || "typical";
+  const utility = utilityInput?.value || "possible";
+  const bathrooms = bathroomsInput?.value || "one";
 
   const hard = COST_MODEL.hardCostPerSqFt[type];
   const finishFactor = COST_MODEL.finishMultiplier[finish];
@@ -94,13 +101,15 @@ function calculateEstimate() {
 }
 
 function renderEstimate() {
-  if (!estimateResult || !estimateBreakdown) {
+  if (!estimateResult) {
     return;
   }
 
   const estimate = calculateEstimate();
   estimateResult.textContent = `Estimated range: ${toCurrency(estimate.roundedLow)} - ${toCurrency(estimate.roundedHigh)}`;
-  estimateBreakdown.textContent = `${estimate.size} sq ft model: hard costs ${toCurrency(estimate.hardLow)}-${toCurrency(estimate.hardHigh)}, soft costs ${toCurrency(estimate.softLow)}-${toCurrency(estimate.softHigh)}, sitework ${toCurrency(estimate.siteLow)}-${toCurrency(estimate.siteHigh)}, utilities ${toCurrency(estimate.utilityLow)}-${toCurrency(estimate.utilityHigh)}.`;
+  if (estimateBreakdown) {
+    estimateBreakdown.textContent = `${estimate.size} sq ft model: hard costs ${toCurrency(estimate.hardLow)}-${toCurrency(estimate.hardHigh)}, soft costs ${toCurrency(estimate.softLow)}-${toCurrency(estimate.softHigh)}, sitework ${toCurrency(estimate.siteLow)}-${toCurrency(estimate.siteHigh)}, utilities ${toCurrency(estimate.utilityLow)}-${toCurrency(estimate.utilityHigh)}.`;
+  }
 }
 
 if (menuBtn && nav) {
@@ -115,7 +124,7 @@ if (year) {
   year.textContent = new Date().getFullYear();
 }
 
-if (estimator && estimateResult && estimateBreakdown) {
+if (estimator && estimateResult) {
   estimator.addEventListener("submit", event => {
     event.preventDefault();
     renderEstimate();
