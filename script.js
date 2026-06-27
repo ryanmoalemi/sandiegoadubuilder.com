@@ -149,6 +149,7 @@ document.querySelectorAll(".reveal").forEach(node => observer.observe(node));
 async function renderAduMonthlyUpdates() {
   const list = document.getElementById("adu-updates-list");
   const meta = document.getElementById("adu-updates-meta");
+  const chip = document.getElementById("adu-sync-chip");
   if (!list) {
     return;
   }
@@ -179,12 +180,18 @@ async function renderAduMonthlyUpdates() {
         ? generated.toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" })
         : "Unknown";
       meta.textContent = `Last widget refresh: ${generatedText}`;
+      if (chip) {
+        chip.textContent = `Updated ${generatedText}`;
+      }
     }
   } catch (error) {
     list.innerHTML =
       "<li>Widget temporarily unavailable. Please use the official source links below.</li>";
     if (meta) {
       meta.textContent = "Last widget refresh: unavailable";
+    }
+    if (chip) {
+      chip.textContent = "Update unavailable";
     }
   }
 }

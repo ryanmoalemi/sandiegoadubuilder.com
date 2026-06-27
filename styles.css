@@ -320,6 +320,14 @@ p {
   gap: 0.8rem;
 }
 
+.adu-widget-tags {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  justify-content: end;
+}
+
 .adu-badge {
   font-size: 0.74rem;
   font-weight: 700;
@@ -329,6 +337,15 @@ p {
   color: #fff;
   background: linear-gradient(120deg, #19815f, #0f5e46);
   padding: 0.3rem 0.62rem;
+}
+
+.adu-sync-chip {
+  font-size: 0.72rem;
+  border-radius: 999px;
+  padding: 0.28rem 0.58rem;
+  color: #355b53;
+  background: rgba(25, 129, 95, 0.13);
+  border: 1px solid rgba(25, 129, 95, 0.3);
 }
 
 .adu-widget-sub {
