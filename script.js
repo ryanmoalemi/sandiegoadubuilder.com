@@ -203,7 +203,7 @@ function initHandbookLeadForm() {
   const status = document.getElementById("handbook-form-status");
   const params = new URLSearchParams(window.location.search);
   if (status && params.get("submitted") === "1") {
-    status.textContent = "Thanks. Your request was submitted. Please check your inbox for the ADU Handbook email.";
+    status.textContent = "Thanks. Your request was submitted. Please check your inbox (and spam/promotions) for the ADU Handbook confirmation email.";
     if (window.history?.replaceState) {
       window.history.replaceState({}, "", window.location.pathname);
     }
