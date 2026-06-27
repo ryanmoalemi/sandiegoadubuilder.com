@@ -197,3 +197,35 @@ async function renderAduMonthlyUpdates() {
 }
 
 renderAduMonthlyUpdates();
+
+function initHandbookLeadForm() {
+  const form = document.getElementById("handbook-lead-form");
+  const status = document.getElementById("handbook-form-status");
+  if (!form || !status) {
+    return;
+  }
+
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+
+    const firstName = String(form.elements.firstName?.value || "").trim();
+    const email = String(form.elements.email?.value || "").trim();
+    const stage = String(form.elements.stage?.value || "").trim();
+    const consent = form.elements.consent?.checked;
+
+    if (!email || !consent) {
+      status.textContent = "Please enter a valid email and accept updates to get the handbook.";
+      return;
+    }
+
+    const subject = encodeURIComponent("ADU Handbook Request");
+    const body = encodeURIComponent(
+      `Please send me the ADU Handbook.\n\nName: ${firstName || "Not provided"}\nEmail: ${email}\nProject stage: ${stage || "Not provided"}`
+    );
+
+    status.textContent = "Thanks. Opening your email app so we can send your handbook.";
+    window.location.href = `mailto:hello@sandiegoadubuilder.com?subject=${subject}&body=${body}`;
+  });
+}
+
+initHandbookLeadForm();

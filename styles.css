@@ -493,6 +493,72 @@ p {
   padding: 0.6rem 0.75rem;
 }
 
+.handbook-page {
+  padding-top: 5.2rem;
+}
+
+.handbook-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.handbook-value-list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.handbook-value-list li {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.6rem 0.75rem;
+  color: var(--muted);
+}
+
+.handbook-signup-card h2 {
+  margin-bottom: 0.4rem;
+}
+
+.handbook-form {
+  margin-top: 0.8rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.handbook-form input,
+.handbook-form select {
+  font: inherit;
+  padding: 0.7rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.handbook-consent {
+  display: flex;
+  align-items: start;
+  gap: 0.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.handbook-consent input {
+  margin-top: 0.15rem;
+}
+
+.handbook-cards {
+  margin-top: 0.9rem;
+}
+
+.handbook-disclaimer {
+  margin-top: 1rem;
+}
+
 .project-page {
   padding: 3rem 0;
 }
@@ -701,7 +767,8 @@ p {
   .project-layout,
   .project-gallery,
   .adu-photo-grid,
-  .adu-content-grid {
+  .adu-content-grid,
+  .handbook-hero {
     grid-template-columns: 1fr;
   }
 

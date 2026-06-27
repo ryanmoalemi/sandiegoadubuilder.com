@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADU Handbook | San Diego ADU Builder</title>
+    <meta
+      name="description"
+      content="Get the San Diego ADU Builder branded ADU Handbook: planning checklist, permit roadmap, budget framework, and design guidance for San Diego homeowners."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://sandiegoadubuilder.com/adu-handbook.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand">San Diego ADU Builder</a>
+        <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+        <nav class="site-nav" id="site-nav">
+          <a href="index.html#services">Services</a>
+          <a href="index.html#process">Process</a>
+          <a href="san-diego-adus.html">San Diego ADUs</a>
+          <a href="adu-handbook.html">ADU Handbook</a>
+          <a href="index.html#projects">Projects</a>
+          <a href="index.html#contact" class="btn btn-sm">Book a Call</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container section handbook-page">
+      <a class="project-back" href="index.html">← Back to Home</a>
+
+      <section class="handbook-hero reveal in">
+        <div>
+          <p class="eyebrow">Free Resource</p>
+          <h1>ADU Handbook</h1>
+          <p class="lead">
+            Our branded ADU Handbook helps San Diego homeowners plan smarter with a practical,
+            plain-English roadmap from concept through permit and construction.
+          </p>
+          <ul class="handbook-value-list">
+            <li>San Diego planning and permit workflow overview</li>
+            <li>Budget planning ranges and cost risk checklist</li>
+            <li>Design and site-readiness checklist before submittal</li>
+            <li>Construction sequencing and owner decision points</li>
+          </ul>
+        </div>
+
+        <aside class="card handbook-signup-card">
+          <h2>Get The Handbook</h2>
+          <p>
+            Enter your email and we will send your ADU Handbook access details.
+          </p>
+          <form id="handbook-lead-form" class="handbook-form">
+            <label for="firstName">First name</label>
+            <input id="firstName" name="firstName" type="text" placeholder="Your first name" />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+
+            <label for="stage">Project stage</label>
+            <select id="stage" name="stage">
+              <option value="">Select one</option>
+              <option value="Just researching">Just researching</option>
+              <option value="Ready for feasibility">Ready for feasibility</option>
+              <option value="Ready for design + permits">Ready for design + permits</option>
+              <option value="Ready to build">Ready to build</option>
+            </select>
+
+            <label class="handbook-consent">
+              <input id="consent" name="consent" type="checkbox" required />
+              I agree to receive ADU planning updates and handbook follow-up by email.
+            </label>
+
+            <button type="submit" class="btn">Send Me The ADU Handbook</button>
+            <p id="handbook-form-status" class="estimate-note" aria-live="polite"></p>
+          </form>
+        </aside>
+      </section>
+
+      <section class="section reveal in">
+        <h2>What Is Inside</h2>
+        <div class="grid cards handbook-cards">
+          <article class="card">
+            <h3>1. Feasibility And Site Fit</h3>
+            <p>
+              A clear framework for evaluating lot constraints, utility strategy, and the ADU type
+              that best fits your property goals.
+            </p>
+          </article>
+          <article class="card">
+            <h3>2. Permit And Plan Workflow</h3>
+            <p>
+              Step-by-step guidance on how design, engineering, and permit milestones stack up so
+              you can avoid avoidable delays.
+            </p>
+          </article>
+          <article class="card">
+            <h3>3. Budget Guardrails</h3>
+            <p>
+              Cost buckets, risk items, and budgeting checkpoints to help you set realistic
+              expectations before committing.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="card handbook-disclaimer reveal in">
+        <h2>Important Note</h2>
+        <p>
+          This ADU Handbook is an educational planning guide created by San Diego ADU Builder and is
+          not legal advice. Always verify current City and State requirements before final permit
+          submittal.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© <span id="year"></span> San Diego ADU Builder</p>
+        <p>Serving San Diego County</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
