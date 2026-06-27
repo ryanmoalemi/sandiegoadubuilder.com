@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-06-26T00:00:00Z",
+  "generatedAt": "2026-06-27T14:56:08.051Z",
   "window": "2026-06",
   "items": [
     {
-      "title": "Regulatory Updates page lists 2025 legislative session items including ADU and JADU bills",
+      "title": "Review current San Diego City ADU and JADU rules",
+      "url": "https://www.sandiego.gov/development-services/news-programs/programs/companion-junior-units",
+      "source": "San Diego City Development Services"
+    },
+    {
+      "title": "Review San Diego City Regulatory Updates",
       "url": "https://www.sandiego.gov/development-services/regulatory-updates",
       "source": "San Diego City Development Services"
     },
     {
-      "title": "2026 Land Development Code update hearing references and amendment drafts are posted",
+      "title": "Review 2026 Land Development Code Update materials",
       "url": "https://www.sandiego.gov/planning/work/land-development-code/updates-in-process",
       "source": "San Diego City Planning"
-    },
-    {
-      "title": "California HCD ADU Handbook remains updated with March 2026 addendum",
-      "url": "https://www.hcd.ca.gov/building-standards/adu/handbook",
-      "source": "California HCD"
     }
   ]
 }
