@@ -105,7 +105,10 @@
       <section id="estimate" class="container section reveal estimator-wrap">
         <div>
           <h2>Quick ADU estimator</h2>
-          <p>Use this rough calculator to get a starting range before your consultation.</p>
+          <p>
+            Data-informed planning range based on 2026 San Diego market assumptions. Final pricing
+            depends on plans, soils, utility routes, and permit review.
+          </p>
         </div>
         <form class="estimator" id="estimator">
           <label for="size">Approximate size (sq ft)</label>
@@ -113,13 +116,45 @@
 
           <label for="type">Project type</label>
           <select id="type" name="type">
-            <option value="1">Detached ADU</option>
-            <option value="0.82">Garage Conversion</option>
-            <option value="0.9">Attached ADU</option>
+            <option value="detached">Detached ADU</option>
+            <option value="garage">Garage Conversion</option>
+            <option value="attached">Attached ADU</option>
+          </select>
+
+          <label for="finish">Finish level</label>
+          <select id="finish" name="finish">
+            <option value="standard">Standard</option>
+            <option value="premium">Premium</option>
+            <option value="luxury">Luxury</option>
+          </select>
+
+          <label for="site">Site complexity</label>
+          <select id="site" name="site">
+            <option value="clear">Clear / flat lot</option>
+            <option value="typical" selected>Typical conditions</option>
+            <option value="constrained">Constrained access / slope</option>
+          </select>
+
+          <label for="utility">Utility upgrade risk</label>
+          <select id="utility" name="utility">
+            <option value="none">Low</option>
+            <option value="possible" selected>Medium</option>
+            <option value="likely">High</option>
+          </select>
+
+          <label for="bathrooms">Bathrooms</label>
+          <select id="bathrooms" name="bathrooms">
+            <option value="one" selected>1 bathroom</option>
+            <option value="two">2 bathrooms</option>
           </select>
 
           <button type="submit" class="btn">Calculate</button>
-          <p id="estimate-result" class="estimate-result" aria-live="polite">Estimated range: $208,000 - $286,000</p>
+          <p id="estimate-result" class="estimate-result" aria-live="polite"></p>
+          <p id="estimate-breakdown" class="estimate-breakdown" aria-live="polite"></p>
+          <p class="estimate-note">
+            Includes: construction, design/engineering/permits, sitework, utility allowance, and
+            contingency. Excludes land value and financing costs.
+          </p>
         </form>
       </section>
 

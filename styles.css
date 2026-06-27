@@ -282,6 +282,16 @@ p {
   color: var(--brand-dark);
 }
 
+.estimate-breakdown {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.estimate-note {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
 .contact {
   text-align: center;
 }
