@@ -95,6 +95,9 @@ p {
 }
 
 .nav-dropdown summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   list-style: none;
   cursor: pointer;
   color: var(--ink);
@@ -103,6 +106,10 @@ p {
 
 .nav-dropdown summary::-webkit-details-marker {
   display: none;
+}
+
+.nav-dropdown summary::marker {
+  content: "";
 }
 
 .nav-submenu {
@@ -114,13 +121,18 @@ p {
   border: 1px solid var(--line);
   border-radius: 12px;
   box-shadow: var(--shadow);
-  padding: 0.45rem;
-  display: grid;
-  gap: 0.15rem;
+  padding: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
   z-index: 12;
 }
 
 .nav-submenu a {
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 1.25;
   padding: 0.45rem 0.55rem;
   border-radius: 8px;
 }
@@ -1004,6 +1016,7 @@ p {
   }
 
   .nav-dropdown summary {
+    display: flex;
     width: 100%;
   }
 
@@ -1013,6 +1026,11 @@ p {
     width: 100%;
     margin-top: 0.35rem;
     box-shadow: none;
+    border-radius: 10px;
+  }
+
+  .nav-submenu a {
+    white-space: normal;
   }
 
   .site-nav.open {
