@@ -82,6 +82,7 @@ p {
   display: flex;
   align-items: center;
   gap: 1.2rem;
+  overflow: visible;
 }
 
 .site-nav a {
@@ -92,6 +93,7 @@ p {
 
 .nav-dropdown {
   position: relative;
+  display: block;
 }
 
 .nav-dropdown summary {
@@ -113,28 +115,36 @@ p {
 }
 
 .nav-submenu {
+  display: none;
   position: absolute;
   top: calc(100% + 0.45rem);
   left: 0;
-  min-width: 250px;
+  min-width: 300px;
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 12px;
   box-shadow: var(--shadow);
-  padding: 0.4rem;
-  display: flex;
-  flex-direction: column;
+  padding: 0.5rem;
   gap: 0.2rem;
   z-index: 12;
 }
 
-.nav-submenu a {
+.nav-dropdown[open] > .nav-submenu {
   display: block;
+}
+
+.nav-submenu a {
+  display: block !important;
   width: 100%;
-  white-space: nowrap;
+  white-space: normal;
   line-height: 1.25;
-  padding: 0.45rem 0.55rem;
+  margin: 0;
+  padding: 0.48rem 0.58rem;
   border-radius: 8px;
+}
+
+.nav-submenu a + a {
+  margin-top: 0.15rem;
 }
 
 .nav-submenu a:hover {
@@ -1021,12 +1031,17 @@ p {
   }
 
   .nav-submenu {
+    display: none;
     position: static;
     min-width: 0;
     width: 100%;
     margin-top: 0.35rem;
     box-shadow: none;
     border-radius: 10px;
+  }
+
+  .nav-dropdown[open] > .nav-submenu {
+    display: block;
   }
 
   .nav-submenu a {
