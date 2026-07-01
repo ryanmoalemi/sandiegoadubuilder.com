@@ -125,6 +125,7 @@ p {
   border-radius: 12px;
   box-shadow: var(--shadow);
   padding: 0.5rem;
+  background-clip: padding-box;
   gap: 0.2rem;
   z-index: 12;
 }
@@ -141,10 +142,11 @@ p {
   margin: 0;
   padding: 0.48rem 0.58rem;
   border-radius: 8px;
+  text-align: left;
 }
 
 .nav-submenu a + a {
-  margin-top: 0.15rem;
+  margin-top: 0.22rem;
 }
 
 .nav-submenu a:hover {
