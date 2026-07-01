@@ -1,14 +1,14 @@
 :root {
-  --bg: #f2eee6;
-  --ink: #15211f;
-  --muted: #4f605d;
-  --brand: #1f6a55;
-  --brand-dark: #0d3b33;
-  --sand: #ddc18b;
-  --card: #fcfaf5;
-  --line: #d9d1c4;
+  --bg: #f4f7fc;
+  --ink: #13213a;
+  --muted: #5c667a;
+  --brand: #01184b;
+  --brand-dark: #001238;
+  --sand: #f4a000;
+  --card: #ffffff;
+  --line: #dbe5f2;
   --radius: 18px;
-  --shadow: 0 16px 40px rgba(21, 33, 31, 0.12);
+  --shadow: 0 18px 50px rgba(1, 24, 75, 0.12);
 }
 
 * {
@@ -22,18 +22,16 @@ body {
 }
 
 body {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   color: var(--ink);
-  background: radial-gradient(circle at 8% 10%, #fff4d8 0%, transparent 40%),
-    radial-gradient(circle at 95% 20%, #d8efe7 0%, transparent 36%),
-    var(--bg);
+  background: var(--bg);
   line-height: 1.55;
 }
 
 h1,
 h2,
 h3 {
-  font-family: "Newsreader", serif;
+  font-family: Arial, Helvetica, sans-serif;
   line-height: 1.1;
   margin: 0 0 0.5rem;
 }
@@ -59,9 +57,9 @@ p {
   position: sticky;
   top: 0;
   z-index: 10;
-  backdrop-filter: blur(10px);
-  background: rgba(242, 238, 230, 0.82);
-  border-bottom: 1px solid rgba(21, 33, 31, 0.08);
+  background: var(--brand);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
 }
 
 .nav-wrap {
@@ -73,7 +71,7 @@ p {
 
 .brand {
   text-decoration: none;
-  color: var(--ink);
+  color: #fff;
   font-weight: 700;
   letter-spacing: 0.02em;
 }
@@ -87,8 +85,9 @@ p {
 
 .site-nav a {
   text-decoration: none;
-  color: var(--ink);
-  font-weight: 500;
+  color: #fff;
+  font-weight: 700;
+  opacity: 0.92;
 }
 
 .nav-dropdown {
@@ -102,8 +101,8 @@ p {
   gap: 0.35rem;
   list-style: none;
   cursor: pointer;
-  color: var(--ink);
-  font-weight: 500;
+  color: #fff;
+  font-weight: 700;
 }
 
 .nav-dropdown summary::-webkit-details-marker {
@@ -167,11 +166,11 @@ p {
   justify-content: center;
   padding: 0.8rem 1.25rem;
   border-radius: 999px;
-  border: 1px solid var(--brand-dark);
+  border: 1px solid var(--sand);
   text-decoration: none;
-  color: #fff;
-  background: linear-gradient(130deg, var(--brand), var(--brand-dark));
-  font-weight: 600;
+  color: var(--brand-dark);
+  background: var(--sand);
+  font-weight: 800;
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
@@ -181,9 +180,9 @@ p {
 }
 
 .btn-outline {
-  color: var(--ink);
-  background: transparent;
-  border-color: var(--line);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.35);
 }
 
 .btn-sm {
@@ -191,19 +190,22 @@ p {
 }
 
 .hero {
-  padding: 5.5rem 0 3rem;
+  background: linear-gradient(135deg, var(--brand), #062d78 62%, #094ea4);
+  color: #fff;
+  padding: 5rem 0 3.4rem;
 }
 
 .eyebrow {
   text-transform: uppercase;
-  letter-spacing: 0.13em;
-  color: var(--brand-dark);
-  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  color: #b9dcff;
+  font-size: 0.82rem;
+  font-weight: 800;
   margin-bottom: 0.8rem;
 }
 
 .lead {
-  color: var(--muted);
+  color: #e7f1ff;
   max-width: 70ch;
   font-size: 1.1rem;
   margin-top: 0.8rem;
@@ -226,8 +228,8 @@ p {
 }
 
 .hero-stats li {
-  background: var(--card);
-  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: var(--radius);
   padding: 1rem;
 }
@@ -238,7 +240,7 @@ p {
 }
 
 .hero-stats span {
-  color: var(--muted);
+  color: #e7f1ff;
   font-size: 0.9rem;
 }
 
@@ -261,6 +263,7 @@ p {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 1.1rem;
+  box-shadow: 0 8px 28px rgba(1, 24, 75, 0.07);
 }
 
 .card p {
@@ -384,9 +387,9 @@ p {
 
 .adu-jump-links a {
   text-decoration: none;
-  color: var(--brand-dark);
-  border: 1px solid #b8d3c8;
-  background: #eef8f3;
+  color: var(--brand);
+  border: 1px solid #c9d9ef;
+  background: #edf4ff;
   border-radius: 999px;
   padding: 0.36rem 0.72rem;
   font-size: 0.86rem;
@@ -394,7 +397,7 @@ p {
 }
 
 .adu-jump-links a:hover {
-  background: #e0f1e9;
+  background: #e1edff;
 }
 
 .adu-block {
@@ -418,8 +421,8 @@ p {
 }
 
 .adu-widget {
-  border: 1px solid #b9d9ce;
-  background: linear-gradient(135deg, #f4fbf7 0%, #e8f5ef 100%);
+  border: 1px solid #ccdaef;
+  background: linear-gradient(135deg, #f4f9ff 0%, #e8f1ff 100%);
 }
 
 .adu-widget-head {
@@ -444,7 +447,7 @@ p {
   text-transform: uppercase;
   border-radius: 999px;
   color: #fff;
-  background: linear-gradient(120deg, #19815f, #0f5e46);
+  background: linear-gradient(120deg, #07327d, #01184b);
   padding: 0.3rem 0.62rem;
 }
 
@@ -452,14 +455,14 @@ p {
   font-size: 0.72rem;
   border-radius: 999px;
   padding: 0.28rem 0.58rem;
-  color: #355b53;
-  background: rgba(25, 129, 95, 0.13);
-  border: 1px solid rgba(25, 129, 95, 0.3);
+  color: #1c3f73;
+  background: rgba(7, 50, 125, 0.1);
+  border: 1px solid rgba(7, 50, 125, 0.25);
 }
 
 .adu-widget-sub {
   margin-top: 0.3rem;
-  color: #355b53;
+  color: #2f4f7b;
 }
 
 .adu-updates-list {
@@ -472,13 +475,13 @@ p {
 }
 
 .adu-updates-list a {
-  color: #0f5e46;
+  color: #07327d;
   font-weight: 600;
 }
 
 .adu-updates-meta {
   margin-top: 0.55rem;
-  color: #43675f;
+  color: #4d5f7e;
   font-size: 0.84rem;
 }
 
@@ -508,7 +511,7 @@ p {
   width: 0.4rem;
   height: 0.4rem;
   border-radius: 999px;
-  background: #2f8d73;
+  background: #0a3f91;
 }
 
 .adu-block .timeline {
@@ -583,9 +586,9 @@ p {
 }
 
 .handbook-proof-strip span {
-  border: 1px solid #bed8ce;
-  background: #edf7f3;
-  color: #1e5d4c;
+  border: 1px solid #bfd1ea;
+  background: #edf4ff;
+  color: #10366f;
   border-radius: 999px;
   padding: 0.28rem 0.62rem;
   font-size: 0.82rem;
@@ -595,11 +598,11 @@ p {
 .handbook-cover-mock {
   margin-top: 0.15rem;
   border-radius: 18px;
-  border: 1px solid #13493c;
-  background: linear-gradient(145deg, #1c6c56, #0e392f);
+  border: 1px solid #052a68;
+  background: linear-gradient(145deg, #07327d, #01184b);
   color: #f3f7f5;
   padding: 1.2rem;
-  box-shadow: 0 20px 46px rgba(14, 57, 47, 0.25);
+  box-shadow: 0 20px 46px rgba(1, 24, 75, 0.28);
 }
 
 .handbook-cover-mock p {
@@ -613,16 +616,16 @@ p {
 }
 
 .handbook-signup-card {
-  border: 1px solid #0f4f3f;
-  background: linear-gradient(180deg, #ffffff 0%, #f7fcfa 100%);
-  box-shadow: 0 16px 36px rgba(16, 56, 47, 0.14);
+  border: 1px solid #153f86;
+  background: linear-gradient(180deg, #ffffff 0%, #f3f8ff 100%);
+  box-shadow: 0 16px 36px rgba(1, 24, 75, 0.14);
 }
 
 .handbook-card-eyebrow {
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #1b6550;
+  color: #10366f;
   font-size: 0.73rem;
   font-weight: 700;
 }
@@ -691,18 +694,18 @@ p {
 
 .handbook-highlight-bar {
   margin-top: 1rem;
-  border: 1px solid #c7d8d2;
-  background: linear-gradient(120deg, #f8f8f4, #eef8f3);
+  border: 1px solid #c8d8ef;
+  background: linear-gradient(120deg, #f9fbff, #edf4ff);
 }
 
 .handbook-highlight-bar p {
-  color: #2f4742;
+  color: #244165;
 }
 
 .handbook-jump-nav {
   margin-top: 1rem;
-  border: 1px solid #c9d7d2;
-  background: linear-gradient(120deg, #f8fbfa, #eef6f3);
+  border: 1px solid #c9d8ef;
+  background: linear-gradient(120deg, #f8fbff, #eef4ff);
 }
 
 .handbook-jump-title {
@@ -710,7 +713,7 @@ p {
   font-size: 0.82rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #2f5750;
+  color: #2c4f7f;
   font-weight: 700;
 }
 
@@ -723,9 +726,9 @@ p {
 
 .handbook-jump-links a {
   text-decoration: none;
-  color: var(--brand-dark);
-  border: 1px solid #c4d8d1;
-  background: #f1f8f5;
+  color: var(--brand);
+  border: 1px solid #c4d7ef;
+  background: #f1f6ff;
   border-radius: 999px;
   padding: 0.34rem 0.68rem;
   font-size: 0.84rem;
@@ -733,7 +736,7 @@ p {
 }
 
 .handbook-jump-links a:hover {
-  background: #e5f1ec;
+  background: #e7f0ff;
 }
 
 .handbook-disclaimer {
@@ -953,14 +956,15 @@ p {
 
 .site-footer {
   margin-top: 2rem;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--brand);
   padding: 1rem 0;
 }
 
 .footer-wrap {
   display: flex;
   justify-content: space-between;
-  color: var(--muted);
+  color: #e7f1ff;
   font-size: 0.95rem;
 }
 
@@ -977,7 +981,7 @@ p {
   height: 300px;
   top: -40px;
   right: -80px;
-  background: #8bc9b5;
+  background: #6fa7ef;
 }
 
 .orb-2 {
@@ -985,7 +989,7 @@ p {
   height: 260px;
   left: -120px;
   bottom: 20%;
-  background: #efc680;
+  background: #f4a000;
 }
 
 .reveal {
