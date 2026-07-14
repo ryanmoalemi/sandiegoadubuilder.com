@@ -693,6 +693,10 @@ p {
   gap: 0.85rem;
 }
 
+.handbook-hero .lead {
+  color: #1d2f4f;
+}
+
 .handbook-proof-strip {
   display: flex;
   flex-wrap: wrap;
