@@ -72,13 +72,13 @@
     }
     .brand{
       display:flex;align-items:center;gap:10px;
-      color:#fff;font-weight:900;letter-spacing:.04em;
+      color:#fff;font-weight:900;letter-spacing:.04em;line-height:1.05;
       text-decoration:none;
     }
-    .brand-mark{
-      width:36px;height:36px;border:2px solid #fff;border-radius:50%;
-      display:grid;place-items:center;font-size:18px;
+    .brand-logo{
+      font-size:1.35rem;line-height:1;
     }
+    .brand small{display:block;color:var(--accent);font-weight:800;font-size:.73rem;letter-spacing:.12em}
     .nav-links{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
     .nav-links a{color:#fff;font-weight:700;font-size:.94rem}
     .nav-cta{
@@ -288,8 +288,8 @@
 <header class="site-header">
   <div class="wrap nav">
     <a class="brand" href="/">
-      <span class="brand-mark">⌂</span>
-      <span>SAN DIEGO ADU BUILDER</span>
+      <span class="brand-logo">⌂</span>
+      <span>SAN DIEGO<br><small>ADU BUILDER</small></span>
     </a>
     <nav class="nav-links" aria-label="Primary navigation">
       <a href="/#services">Services</a>
