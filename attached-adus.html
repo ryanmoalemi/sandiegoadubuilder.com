@@ -15,21 +15,8 @@
     <title>Attached ADUs in San Diego | Design, Permits and Construction</title>
     <meta name="description" content="Plan an attached ADU in San Diego. Learn about layouts, second-story additions, shared-wall design, costs, permits, utilities, privacy and site feasibility." />
     <link rel="canonical" href="https://sandiegoadubuilder.com/attached-adus.html" />
-    <link rel="stylesheet" href="styles.css?v=20260710-2" />
-    <style>
-      :root {
-        --service-navy: #01184b;
-        --service-blue: #006fc9;
-        --service-sky: #eaf5ff;
-        --service-gold: #f4a000;
-        --service-ink: #13213a;
-        --service-muted: #5c667a;
-        --service-line: #dbe5f2;
-        --service-soft: #f6f9fd;
-        --service-shadow: 0 18px 50px rgba(1, 24, 75, 0.12);
-        --service-radius: 18px;
-      }
-
+    <link rel="stylesheet" href="styles.css?v=20260709-2" />
+      <style id="nav-contrast-hotfix">
       .site-nav,
       .site-nav.open,
       .site-nav .nav-submenu {
@@ -39,475 +26,13 @@
 
       .site-nav a,
       .site-nav summary,
-      .site-nav .nav-submenu a,
-      .menu-btn {
+      .site-nav .nav-submenu a {
         color: #fff !important;
       }
 
       .site-nav .nav-submenu a:hover,
       .site-nav .nav-submenu a:focus-visible {
         background: rgba(255, 255, 255, 0.16) !important;
-      }
-
-      .service-page {
-        background: #fff;
-      }
-
-      .service-page .container {
-        width: min(1180px, calc(100% - 2rem));
-        margin: 0 auto;
-      }
-
-      .content-narrow {
-        max-width: 820px;
-      }
-
-      .service-page h1,
-      .service-page h2,
-      .service-page h3,
-      .service-page strong {
-        color: var(--service-navy);
-      }
-
-      .service-page h1 {
-        font-size: clamp(38px, 5vw, 66px);
-        line-height: 0.98;
-        letter-spacing: -0.045em;
-        margin: 0 0 18px;
-      }
-
-      .service-page h2 {
-        font-size: clamp(30px, 3.5vw, 46px);
-        line-height: 1.05;
-        letter-spacing: -0.03em;
-        margin: 0 0 18px;
-      }
-
-      .service-page h3 {
-        font-size: 25px;
-        line-height: 1.18;
-        margin: 0 0 10px;
-      }
-
-      .service-page p,
-      .service-page li,
-      .service-page td,
-      .service-page th,
-      .service-page summary,
-      .service-page span {
-        color: var(--service-muted);
-      }
-
-      .service-hero {
-        background: linear-gradient(135deg, var(--service-navy), #062d78 62%, #094ea4);
-        color: #fff;
-        overflow: hidden;
-      }
-
-      .service-hero .container {
-        padding: 76px 20px 70px;
-        display: grid;
-        grid-template-columns: 1.05fr 0.95fr;
-        gap: 44px;
-        align-items: start;
-      }
-
-      .service-hero .eyebrow,
-      .service-hero h1,
-      .service-hero .hero-copy,
-      .service-hero .hero-actions {
-        grid-column: 1;
-      }
-
-      .service-hero .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        color: #b9dcff;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        font-size: 13px;
-        margin-bottom: 15px;
-      }
-
-      .service-hero .eyebrow::before {
-        content: "";
-        width: 38px;
-        height: 3px;
-        background: var(--service-gold);
-        border-radius: 999px;
-      }
-
-      .service-hero h1,
-      .service-hero .hero-copy,
-      .service-hero .project-summary-grid strong,
-      .service-hero .project-summary-grid span,
-      .service-hero .button-secondary {
-        color: #fff;
-      }
-
-      .hero-copy {
-        font-size: 19px;
-        max-width: 720px;
-        color: #e7f1ff !important;
-        margin: 0 0 28px;
-      }
-
-      .hero-actions {
-        display: flex;
-        gap: 14px;
-        flex-wrap: wrap;
-        margin-top: 26px;
-      }
-
-      .button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 999px;
-        padding: 14px 20px;
-        font-weight: 800;
-        text-decoration: none;
-      }
-
-      .button-primary {
-        background: var(--service-gold);
-        color: var(--service-navy) !important;
-      }
-
-      .button-secondary {
-        background: rgba(255, 255, 255, 0.11);
-        border: 1px solid rgba(255, 255, 255, 0.25);
-      }
-
-      .project-summary-grid {
-        grid-column: 2;
-        grid-row: 1 / span 4;
-        align-self: stretch;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 12px;
-        background: #fff;
-        border-radius: 24px;
-        padding: 22px;
-        box-shadow: var(--service-shadow);
-      }
-
-      .project-summary-grid::before {
-        content: "Attached ADU planning";
-        height: 360px;
-        border-radius: 18px;
-        background: linear-gradient(135deg, #f4f8ff, #dcecff);
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        align-items: end;
-        padding: 18px;
-        color: #fff;
-        font-weight: 800;
-        background-image: linear-gradient(135deg, rgba(244, 248, 255, 0.85), rgba(220, 236, 255, 0.75)), url('/assets/images/projects/detached-adu-san-diego-photo.png');
-        background-size: cover;
-        background-position: center;
-        box-shadow: inset 0 0 0 4px var(--service-navy);
-      }
-
-      .summary-item {
-        background: var(--service-soft);
-        border: 1px solid var(--service-line);
-        border-radius: 14px;
-        padding: 13px;
-      }
-
-      .summary-item strong {
-        display: block;
-        color: var(--service-navy) !important;
-        font-size: 18px;
-        margin-bottom: 4px;
-      }
-
-      .summary-item span {
-        display: block;
-        color: var(--service-muted) !important;
-        font-size: 13px;
-        line-height: 1.35;
-      }
-
-      .intro-section,
-      .content-section,
-      .final-cta {
-        padding: 64px 0;
-      }
-
-      .intro-section {
-        padding-top: 34px;
-      }
-
-      .local-takeaway {
-        border-left: 5px solid var(--service-gold);
-        background: #fff8e8;
-        border-radius: 14px;
-        padding: 18px 20px;
-        margin-top: 22px;
-        color: #2d3951 !important;
-      }
-
-      .page-toc {
-        padding-bottom: 8px;
-      }
-
-      .page-toc .container {
-        background: var(--service-soft);
-        border: 1px solid var(--service-line);
-        border-radius: var(--service-radius);
-        padding: 24px;
-      }
-
-      .page-toc h2 {
-        font-size: 20px;
-        margin-bottom: 12px;
-      }
-
-      .toc-links {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px 18px;
-      }
-
-      .toc-links a {
-        display: block;
-        padding: 8px 0;
-        border-bottom: 1px solid #e6edf6;
-        font-weight: 700;
-        color: var(--service-navy);
-        text-decoration: none;
-      }
-
-      .alternate-section {
-        background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-      }
-
-      .numbered-card-grid,
-      .feature-grid,
-      .system-grid,
-      .cost-profile-grid,
-      .location-grid,
-      .issue-list {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 18px;
-        margin-top: 26px;
-      }
-
-      .numbered-card,
-      .feature-grid article,
-      .system-grid article,
-      .cost-profile-grid article,
-      .location-grid article,
-      .issue-list article {
-        border: 1px solid var(--service-line);
-        border-radius: var(--service-radius);
-        padding: 22px;
-        background: #fff;
-        box-shadow: 0 8px 28px rgba(1, 24, 75, 0.07);
-      }
-
-      .card-number {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        background: var(--service-sky);
-        color: var(--service-navy) !important;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 900;
-        margin-bottom: 13px;
-      }
-
-      .check-list,
-      .service-area-list {
-        list-style: none;
-        padding: 0;
-        margin: 16px 0 0;
-      }
-
-      .check-list li,
-      .service-area-list li {
-        position: relative;
-        padding-left: 30px;
-        margin: 12px 0;
-      }
-
-      .check-list li::before,
-      .service-area-list li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 21px;
-        height: 21px;
-        border-radius: 50%;
-        background: var(--service-gold);
-        color: var(--service-navy);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 13px;
-        font-weight: 900;
-      }
-
-      .columns-two {
-        columns: 2;
-        column-gap: 34px;
-      }
-
-      .columns-two li,
-      .service-area-list li {
-        break-inside: avoid;
-      }
-
-      .responsive-table {
-        overflow-x: auto;
-        margin-top: 18px;
-      }
-
-      .responsive-table table {
-        width: 100%;
-        border-collapse: collapse;
-        border: 1px solid var(--service-line);
-        border-radius: 14px;
-        overflow: hidden;
-        background: #fff;
-      }
-
-      .responsive-table th {
-        background: var(--service-navy);
-        color: #fff !important;
-        text-align: left;
-        padding: 12px;
-        font-size: 14px;
-      }
-
-      .responsive-table td {
-        padding: 12px;
-        border-top: 1px solid var(--service-line);
-        vertical-align: top;
-      }
-
-      .responsive-table tr:nth-child(even) td {
-        background: #f8fbff;
-      }
-
-      .disclaimer {
-        font-size: 13px;
-        color: #526079 !important;
-        margin-top: 14px;
-      }
-
-      .process-steps {
-        display: grid;
-        gap: 16px;
-        margin-top: 24px;
-      }
-
-      .process-steps article {
-        display: grid;
-        grid-template-columns: 70px 1fr;
-        gap: 18px;
-        background: #fff;
-        border: 1px solid var(--service-line);
-        border-radius: 18px;
-        padding: 20px;
-      }
-
-      .process-steps article > span {
-        width: 54px;
-        height: 54px;
-        border-radius: 50%;
-        background: var(--service-navy);
-        color: #fff !important;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 900;
-        font-size: 22px;
-      }
-
-      .faq-list {
-        border-top: 1px solid var(--service-line);
-      }
-
-      .faq-list details {
-        border-bottom: 1px solid var(--service-line);
-        padding: 18px 0;
-      }
-
-      .faq-list summary {
-        cursor: pointer;
-        font-weight: 900;
-        color: var(--service-navy) !important;
-        font-size: 19px;
-      }
-
-      .faq-list p {
-        margin-top: 12px;
-      }
-
-      .final-cta {
-        background: linear-gradient(135deg, var(--service-navy), #07327d);
-        color: #fff;
-      }
-
-      .final-cta h2,
-      .final-cta p {
-        color: #fff;
-      }
-
-      .final-cta .content-narrow {
-        display: grid;
-        gap: 18px;
-      }
-
-      @media (max-width: 900px) {
-        .service-hero .container,
-        .toc-links,
-        .numbered-card-grid,
-        .feature-grid,
-        .system-grid,
-        .cost-profile-grid,
-        .location-grid,
-        .issue-list {
-          grid-template-columns: 1fr;
-        }
-
-        .service-hero {
-          padding-left: 0;
-          padding-right: 0;
-        }
-
-        .service-hero .container {
-          gap: 24px;
-          padding-top: 42px;
-          padding-bottom: 42px;
-        }
-
-        .project-summary-grid {
-          grid-column: 1;
-          grid-row: auto;
-        }
-
-        .project-summary-grid::before {
-          height: 260px;
-        }
-
-        .columns-two {
-          columns: 1;
-        }
-
-        .process-steps article {
-          grid-template-columns: 1fr;
-        }
       }
     </style>
   </head>
@@ -585,7 +110,7 @@
             connected to the main residence. It focuses on the decisions that affect real attached ADU
             projects, including where the addition should go, whether a one-story or second-story design
             makes sense, how the structure connects to the house, how occupants maintain privacy and how
-            utilities can be extended without creating unnecessary cost.
+            utilities can be extended without creating unnecessary cost. Homeowners comparing a <a href="detached-adus.html">detached ADU</a>, <a href="adu-garage-conversions.html">garage conversion</a>, or <a href="jadus.html">JADU</a> will find specific guides for each on this site.
           </p>
 
           <p class="local-takeaway">
@@ -760,7 +285,7 @@
           <h3>Why San Diego owners choose attached ADUs</h3>
 
           <ul class="check-list">
-            <li>They can preserve more usable backyard area than a detached structure.</li>
+            <li>They can preserve more usable backyard area than a <a href="detached-adus.html">detached backyard ADU</a>.</li>
             <li>Utilities may be easier to extend from the primary residence.</li>
             <li>They can create convenient housing for parents, adult children or caregivers.</li>
             <li>They may integrate better with compact or unusually shaped lots.</li>
@@ -776,7 +301,7 @@
 
           <p>
             An attached design may look efficient on a site plan but create major problems for the
-            primary home. The feasibility review should consider both residences at the same time.
+            primary home. The <a href="adu-feasibility-studies.html">feasibility review</a> should consider both residences at the same time.
           </p>
 
           <div class="issue-list">
@@ -1506,9 +1031,9 @@
           <h2>Thinking about adding an attached ADU to your San Diego home?</h2>
 
           <p>
-            Start with a property and building feasibility review. We evaluate the proposed location,
-            existing structure, setbacks, height, utilities, privacy, access, roof connection and permit
-            path before turning the idea into a detailed design.
+            Start with a property and building <a href="adu-feasibility-studies.html">feasibility review</a>. We evaluate the proposed location,
+            existing structure, setbacks, height, utilities, privacy, access, roof connection and <a href="adu-permitting.html">permit
+            path</a> before turning the idea into a detailed design. See our <a href="adu-cost.html">ADU cost guide</a> for attached ADU budget ranges and our <a href="adu-financing.html">financing guide</a> for funding options. For local rules, visit our <a href="san-diego-adus.html">San Diego ADU regulations page</a>.
           </p>
 
           <a class="button button-primary" href="book-a-call.html">Book an attached ADU consultation</a>
