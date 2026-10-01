@@ -29,6 +29,34 @@ function stripTags(value) {
   return value.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
 }
 
+// Phrases removed from the information-only site. Never write them back into adu-updates.json.
+const REMOVED_LANGUAGE = [
+  /\bwe build\b/i,
+  /\bour team\b/i,
+  /\bbook a\b/i,
+  /\bschedule a\b/i,
+  /schedule consultation/i,
+  /get a similar adu plan/i,
+  /turnkey/i,
+  /request a quote/i,
+  /request-a-quote/i,
+  /120\+/,
+  /4\.9\/5/,
+  /localbusiness/i,
+  /homeandconstructionbusiness/i
+];
+
+function isRemovedLanguage(value) {
+  return REMOVED_LANGUAGE.some((pattern) => pattern.test(String(value || "")));
+}
+
+function cleanTitle(value) {
+  return String(value || "")
+    .replace(/\u2014/g, ", ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function normalizeAbsolute(base, maybeUrl) {
   try {
     return new URL(maybeUrl, base).toString();
@@ -57,7 +85,9 @@ function extractMonthlyLinks(html, baseUrl, monthWindow) {
     );
     if (!isRelevant) continue;
 
-    out.push({ title: text, url: abs });
+    const title = cleanTitle(text);
+    if (isRemovedLanguage(title) || isRemovedLanguage(abs)) continue;
+    out.push({ title, url: abs });
   }
 
   return out.slice(0, 8);
@@ -87,17 +117,22 @@ async function main() {
         items.push({ ...link, source: target.source });
       }
     } catch (error) {
-      items.push({
-        title: `Auto-check could not parse ${target.source} updates this run`,
-        url: target.url,
-        source: target.source
-      });
+      const fallbackTitle = cleanTitle(`Auto-check could not parse ${target.source} updates this run`);
+      if (!isRemovedLanguage(fallbackTitle) && !isRemovedLanguage(target.url)) {
+        items.push({
+          title: fallbackTitle,
+          url: target.url,
+          source: target.source
+        });
+      }
     }
   }
 
   const unique = [];
   const seen = new Set();
   for (const item of items) {
+    item.title = cleanTitle(item.title);
+    if (isRemovedLanguage(`${item.title} ${item.url} ${item.source}`)) continue;
     const key = `${item.url}|${item.title}`;
     if (seen.has(key)) continue;
     seen.add(key);
@@ -122,13 +157,21 @@ async function main() {
     }
   ];
 
+  const safeFallback = fallback.filter(
+    (item) => !isRemovedLanguage(`${item.title} ${item.url} ${item.source}`)
+  );
   const payload = {
     generatedAt: now.toISOString(),
     window,
-    items: unique.length > 0 ? unique.slice(0, 12) : fallback
+    items: unique.length > 0 ? unique.slice(0, 12) : safeFallback
   };
 
-  writeFileSync("adu-updates.json", `${JSON.stringify(payload, null, 2)}\n`, "utf8");
+  const serialized = `${JSON.stringify(payload, null, 2)}\n`;
+  if (isRemovedLanguage(serialized) || serialized.includes("\u2014")) {
+    throw new Error("Refusing to write adu-updates.json because it contains removed sales language.");
+  }
+
+  writeFileSync("adu-updates.json", serialized, "utf8");
   console.log(`Updated adu-updates.json with ${payload.items.length} items for ${window}`);
 }
 

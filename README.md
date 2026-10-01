@@ -1,6 +1,6 @@
 # sandiegoadubuilder.com
 
-Static marketing website for San Diego ADU Builder, prepared for GitHub Pages deployment.
+Static information guide for San Diego ADU rules, permits, costs, and financing. It does not sell design or construction. Prepared for GitHub Pages.
 
 ## Local Preview
 
