@@ -1086,6 +1086,10 @@ p {
   font-size: 0.95rem;
 }
 
+.site-footer a {
+  color: #fff;
+}
+
 .bg-orb {
   position: fixed;
   z-index: -1;

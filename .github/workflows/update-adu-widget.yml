@@ -24,6 +24,9 @@ jobs:
       - name: Generate ADU updates JSON
         run: node scripts/update-adu-widget.mjs
 
+      - name: Check information-only site rules
+        run: node scripts/check-site.mjs
+
       - name: Commit and push if changed
         run: |
           if git diff --quiet; then
