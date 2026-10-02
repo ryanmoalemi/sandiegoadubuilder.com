@@ -281,6 +281,24 @@ if (/writeFileSync\(\s*["'](?!adu-updates\.json)/.test(widget)) {
   fail("update-adu-widget.mjs writes a file other than adu-updates.json");
 }
 
+const removedPublicFiles = [
+  "assets/ADU-Handbook.pdf",
+  "assets/San-Diego-ADU-Builder-ADU-Handbook.pdf",
+  "assets/images/projects/craftsman-after.jpg",
+  "assets/images/projects/craftsman-backyard-cottage.jpg",
+  "projects/craftsman-backyard-cottage.html",
+  "projects/rice-street-east-block.html",
+  "projects/rice-street-west-block.html"
+];
+for (const name of removedPublicFiles) {
+  try {
+    statSync(join(root, name));
+    fail(`${name} should be removed`);
+  } catch {
+    // absent, as required
+  }
+}
+
 if (failures.length) {
   console.error(`Site check failed (${failures.length})`);
   for (const message of failures) console.error(`- ${message}`);

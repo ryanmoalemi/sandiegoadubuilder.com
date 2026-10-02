@@ -1249,3 +1249,9 @@ p {
     gap: 0.3rem;
   }
 }
+
+.stock-caption {
+  color: var(--muted);
+  font-size: 0.86rem;
+  margin: 0.45rem 0 0;
+}
