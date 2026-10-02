@@ -30,6 +30,7 @@ function stripTags(value) {
 }
 
 // Phrases removed from the information-only site. Never write them back into adu-updates.json.
+// This script only records links. It does not write a summary of rule changes.
 const REMOVED_LANGUAGE = [
   /\bwe build\b/i,
   /\bour team\b/i,
@@ -43,7 +44,10 @@ const REMOVED_LANGUAGE = [
   /120\+/,
   /4\.9\/5/,
   /localbusiness/i,
-  /homeandconstructionbusiness/i
+  /homeandconstructionbusiness/i,
+  /what changed this month/i,
+  /auto updated/i,
+  /live digest/i
 ];
 
 function isRemovedLanguage(value) {

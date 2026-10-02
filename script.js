@@ -164,7 +164,7 @@ async function renderAduMonthlyUpdates() {
     const items = Array.isArray(payload.items) ? payload.items.slice(0, 8) : [];
 
     if (items.length === 0) {
-      list.innerHTML = "<li>No confirmed updates were detected for this month yet.</li>";
+      list.innerHTML = "<li>No matching links were found on the source pages for this month.</li>";
     } else {
       list.innerHTML = items
         .map(
@@ -181,7 +181,7 @@ async function renderAduMonthlyUpdates() {
         : "Unknown";
       meta.textContent = `Last widget refresh: ${generatedText}`;
       if (chip) {
-        chip.textContent = `Updated ${generatedText}`;
+        chip.textContent = `Checked ${generatedText}`;
       }
     }
   } catch (error) {
@@ -191,7 +191,7 @@ async function renderAduMonthlyUpdates() {
       meta.textContent = "Last widget refresh: unavailable";
     }
     if (chip) {
-      chip.textContent = "Update unavailable";
+      chip.textContent = "Check unavailable";
     }
   }
 }
