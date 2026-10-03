@@ -299,6 +299,19 @@ for (const name of removedPublicFiles) {
   }
 }
 
+const about = readFileSync(join(root, "about.html"), "utf8");
+const oldNameMention = "San Diego ADU Guide (sandiegoadubuilder.com)";
+if (about.split(oldNameMention).length - 1 !== 1) {
+  fail("about.html should mention San Diego ADU Guide (sandiegoadubuilder.com) once");
+}
+for (const file of files) {
+  if (!file.endsWith(".html") && !file.endsWith(".json")) continue;
+  const text = readFileSync(file, "utf8");
+  if (text.includes("San Diego ADU Builder") || text.includes("ADU BUILDER")) {
+    fail(`${rel(file)} still uses the old brand name`);
+  }
+}
+
 if (failures.length) {
   console.error(`Site check failed (${failures.length})`);
   for (const message of failures) console.error(`- ${message}`);
