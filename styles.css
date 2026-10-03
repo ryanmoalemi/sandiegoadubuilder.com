@@ -866,6 +866,45 @@ p {
   background: #e7f0ff;
 }
 
+.jurisdiction-compare {
+  margin-top: 1rem;
+}
+
+.jurisdiction-compare .compare-reviewed {
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.compare-table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+  font-size: 0.95rem;
+}
+
+.compare-table th,
+.compare-table td {
+  border: 1px solid var(--line);
+  padding: 0.6rem 0.7rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.compare-table th {
+  background: #f4f8fd;
+  color: var(--brand-dark);
+}
+
+.compare-table tbody th {
+  width: 7.5rem;
+}
+
 .handbook-disclaimer {
   margin-top: 1rem;
 }
