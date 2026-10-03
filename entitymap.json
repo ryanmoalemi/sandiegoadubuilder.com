@@ -5,7 +5,7 @@
   "generated": "2026-07-17T00:09:32Z",
   "publisher": {
     "@type": "Organization",
-    "name": "San Diego ADU Builder",
+    "name": "San Diego ADU Guide",
     "url": "https://sandiegoadubuilder.com/"
   },
   "entities": [
@@ -13,7 +13,7 @@
       "@type": "Organization",
       "@id": "https://sandiegoadubuilder.com/entitymap.html#e_001",
       "id": "e_001",
-      "name": "San Diego ADU Builder",
+      "name": "San Diego ADU Guide",
       "description": "An independent information site about accessory dwelling unit rules, permits, costs, and financing in San Diego County. It does not design, build, or sell ADUs.",
       "url": "https://sandiegoadubuilder.com/",
       "relationships": [
@@ -58,13 +58,13 @@
           "quote": "A plain-language guide to ADU rules, permits, costs and financing in San Diego County.",
           "url": "https://sandiegoadubuilder.com/",
           "title": "San Diego ADU Rules, Permits, and Costs",
-          "publisher": "San Diego ADU Builder"
+          "publisher": "San Diego ADU Guide"
         },
         {
           "quote": "The site explains detached ADUs, garage conversions, attached ADUs, JADUs, permitting, feasibility, plans, costs, financing, and rental income in San Diego County. It does not design or build ADUs.",
           "url": "https://sandiegoadubuilder.com/",
           "title": "San Diego ADU Rules, Permits, and Costs",
-          "publisher": "San Diego ADU Builder"
+          "publisher": "San Diego ADU Guide"
         }
       ]
     },
@@ -113,7 +113,7 @@
           "quote": "San Diego ADUs can provide rental housing, multigenerational living space, guest accommodations, or flexible work and family space, subject to site constraints and applicable regulations.",
           "url": "https://sandiegoadubuilder.com/san-diego-adus.html",
           "title": "San Diego ADUs: Rules, Permits, and Planning",
-          "publisher": "San Diego ADU Builder"
+          "publisher": "San Diego ADU Guide"
         }
       ]
     },
@@ -147,7 +147,7 @@
           "quote": "Detached ADUs are standalone backyard homes designed for rental income, family living, guest accommodations, or flexible work-life space.",
           "url": "https://sandiegoadubuilder.com/detached-adus.html",
           "title": "Detached ADUs in San Diego",
-          "publisher": "San Diego ADU Builder"
+          "publisher": "San Diego ADU Guide"
         }
       ]
     },
@@ -181,7 +181,7 @@
           "quote": "Garage conversion ADUs transform existing garage space into efficient, comfortable, permit-ready living units without wasting the available footprint.",
           "url": "https://sandiegoadubuilder.com/adu-garage-conversions.html",
           "title": "ADU Garage Conversions in San Diego",
-          "publisher": "San Diego ADU Builder"
+          "publisher": "San Diego ADU Guide"
         }
       ]
     },
@@ -214,7 +214,7 @@
           "quote": "Attached ADUs are additions that connect to the existing home while creating independent living space and preserving the property's overall design and curb appeal.",
           "url": "https://sandiegoadubuilder.com/attached-adus.html",
           "title": "Attached ADUs in San Diego",
-          "publisher": "San Diego ADU Builder"
+          "publisher": "San Diego ADU Guide"
         }
       ]
     },
@@ -248,7 +248,7 @@
           "quote": "A JADU is a compact housing option created within a qualifying single-family residence and planned according to applicable size, access, sanitation, and owner-occupancy rules.",
           "url": "https://sandiegoadubuilder.com/jadus.html",
           "title": "JADUs in San Diego",
-          "publisher": "San Diego ADU Builder"
+          "publisher": "San Diego ADU Guide"
         }
       ]
     },
@@ -286,7 +286,7 @@
           "quote": "ADU permitting includes preparing plans, submitting them to the appropriate jurisdiction, responding to plan-check comments, and coordinating approvals before construction begins.",
           "url": "https://sandiegoadubuilder.com/adu-permitting.html",
           "title": "ADU Permitting in San Diego",
-          "publisher": "San Diego ADU Builder"
+          "publisher": "San Diego ADU Guide"
         }
       ]
     },
@@ -319,7 +319,7 @@
           "quote": "A feasibility review assesses zoning, lot constraints, setbacks, utility access, site conditions, and other factors that determine what type and size of ADU may be practical.",
           "url": "https://sandiegoadubuilder.com/adu-feasibility-studies.html",
           "title": "ADU Feasibility Studies in San Diego",
-          "publisher": "San Diego ADU Builder"
+          "publisher": "San Diego ADU Guide"
         }
       ]
     },
@@ -357,7 +357,7 @@
           "quote": "ADU plans are developed around the homeowner's goals and coordinated with structural and building-systems engineering before permit submission.",
           "url": "https://sandiegoadubuilder.com/",
           "title": "San Diego ADU Rules, Permits, and Costs",
-          "publisher": "San Diego ADU Builder"
+          "publisher": "San Diego ADU Guide"
         }
       ]
     },
@@ -400,7 +400,7 @@
           "quote": "The ADU process begins with site and feasibility review, continues through design and engineering and permit approvals, and concludes with construction and handover.",
           "url": "https://sandiegoadubuilder.com/",
           "title": "San Diego ADU Rules, Permits, and Costs",
-          "publisher": "San Diego ADU Builder"
+          "publisher": "San Diego ADU Guide"
         }
       ]
     },
@@ -434,7 +434,7 @@
           "quote": "San Diego ADU planning requires reviewing current state law together with the rules, overlays, development standards, and submittal requirements of the local permitting jurisdiction.",
           "url": "https://sandiegoadubuilder.com/san-diego-adus.html",
           "title": "San Diego ADUs: Rules, Permits, and Planning",
-          "publisher": "San Diego ADU Builder"
+          "publisher": "San Diego ADU Guide"
         }
       ]
     },
@@ -462,7 +462,7 @@
           "quote": "Construction follows approved plans and includes coordination of trades, sitework, utilities, inspections, interior and exterior finishes, and final project handover.",
           "url": "https://sandiegoadubuilder.com/",
           "title": "San Diego ADU Rules, Permits, and Costs",
-          "publisher": "San Diego ADU Builder"
+          "publisher": "San Diego ADU Guide"
         }
       ]
     },
@@ -501,7 +501,7 @@
           "quote": "ADU costs in San Diego vary by unit type, size, site conditions, and finish level, and understanding the full cost picture is an important part of planning a project.",
           "url": "https://sandiegoadubuilder.com/adu-cost.html",
           "title": "ADU Cost in San Diego",
-          "publisher": "San Diego ADU Builder"
+          "publisher": "San Diego ADU Guide"
         }
       ]
     },
@@ -535,7 +535,7 @@
           "quote": "ADU financing options include home equity loans, HELOCs, cash-out refinances, construction loans, and other products that can be matched to project budget and timeline goals.",
           "url": "https://sandiegoadubuilder.com/adu-financing.html",
           "title": "ADU Financing in San Diego",
-          "publisher": "San Diego ADU Builder"
+          "publisher": "San Diego ADU Guide"
         }
       ]
     },
@@ -568,7 +568,7 @@
           "quote": "Rental income from a San Diego ADU can offset construction costs and mortgage payments, with projected returns depending on unit type, location, size, and local market conditions.",
           "url": "https://sandiegoadubuilder.com/adu-rental-income.html",
           "title": "ADU Rental Income in San Diego",
-          "publisher": "San Diego ADU Builder"
+          "publisher": "San Diego ADU Guide"
         }
       ]
     },
@@ -602,7 +602,7 @@
           "quote": "Pre-approved ADU plans allow homeowners to select a reviewed plan set and move to permit faster by skipping the standard architectural plan-check review process.",
           "url": "https://sandiegoadubuilder.com/pre-approved-adu-plans.html",
           "title": "Pre-Approved ADU Plans in San Diego",
-          "publisher": "San Diego ADU Builder"
+          "publisher": "San Diego ADU Guide"
         }
       ]
     },
@@ -615,14 +615,14 @@
       "url": "https://sandiegoadubuilder.com/adu-handbook.html",
       "publisher": {
         "@type": "Organization",
-        "name": "San Diego ADU Builder",
+        "name": "San Diego ADU Guide",
         "url": "https://sandiegoadubuilder.com/"
       },
       "relationships": [
         {
           "type": "Published By",
           "target": "e_001",
-          "label": "San Diego ADU Builder"
+          "label": "San Diego ADU Guide"
         },
         {
           "type": "Documents",
@@ -655,7 +655,7 @@
           "quote": "The San Diego ADU Handbook provides a structured overview of ADU types, the full project workflow, permitting requirements, design considerations, costs, and financing strategies for San Diego homeowners.",
           "url": "https://sandiegoadubuilder.com/adu-handbook.html",
           "title": "San Diego ADU Handbook",
-          "publisher": "San Diego ADU Builder"
+          "publisher": "San Diego ADU Guide"
         }
       ]
     }
