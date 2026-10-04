@@ -24,6 +24,12 @@ jobs:
       - name: Generate ADU updates JSON
         run: node scripts/update-adu-widget.mjs
 
+      - name: Optimize images
+        continue-on-error: true
+        run: |
+          python3 -m pip install --user pillow || echo "IMAGE_OPTIMIZE_FAILURE: could not install Pillow"
+          node scripts/optimize-images.mjs
+
       - name: Check information-only site rules
         run: node scripts/check-site.mjs
 

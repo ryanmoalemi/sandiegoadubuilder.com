@@ -17,14 +17,14 @@
   <meta property="og:title" content="ADU Permits in San Diego">
   <meta property="og:description" content="How ADU permits work in San Diego County: which agency reviews the plans, required drawings, fees, corrections, and inspections.">
   <meta property="og:url" content="https://sandiegoadubuilder.com/adu-permitting.html">
-  <meta property="og:image" content="https://sandiegoadubuilder.com/assets/images/projects/ai-illustration-backyard-adu.png">
+  <meta property="og:image" content="https://sandiegoadubuilder.com/assets/images/projects/ai-illustration-backyard-adu.webp">
   <meta property="og:image:alt" content="AI-generated illustration of a backyard ADU. Not a real project.">
   <meta property="og:site_name" content="San Diego ADU Guide">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ADU Permits in San Diego">
   <meta name="twitter:description" content="How ADU permits work in San Diego County: which agency reviews the plans, required drawings, fees, corrections, and inspections.">
-  <style>
+  <style>picture{display:contents}
     :root{
       --navy:#01184b;
       --blue:#0d3f86;
@@ -87,7 +87,7 @@
     .hero{
       background:
         linear-gradient(90deg,rgba(1,24,75,.94) 0%,rgba(1,24,75,.82) 46%,rgba(1,24,75,.28) 100%),
-        url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2200&q=84") center/cover;
+        image-set(url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?fit=crop&w=2200&q=84&fm=webp") type("image/webp"), url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?fit=crop&w=2200&q=84&fm=jpg") type("image/jpeg")) center/cover;
       color:#fff;padding:92px 0 84px;
     }
     .hero-inner{max-width:860px}
@@ -306,6 +306,7 @@
   ]
 }
 </script>
+<link rel="preload" as="image" type="image/webp" href="https://images.unsplash.com/photo-1503387762-592deb58ef4e?fit=crop&w=2200&q=84&fm=webp" fetchpriority="high">
 </head>
 
 <body>
@@ -384,9 +385,7 @@
         </p>
       </div>
       <figure class="image-card">
-        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=82"
-             alt="Stock photo of construction work"
-             width="1400" height="1050" loading="eager">
+        <picture><source srcset="https://images.unsplash.com/photo-1504307651254-35680f356dfd?fit=crop&w=1400&q=82&fm=webp" type="image/webp"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?fit=crop&w=1400&q=82&fm=jpg" alt="Stock photo of construction work" width="1400" height="927" loading="lazy" decoding="async"></picture>
         <figcaption class="caption">Stock photo (Unsplash). Not a San Diego project.</figcaption>
       </figure>
     </div>
@@ -447,9 +446,7 @@
         </ul>
       </div>
       <figure class="image-card">
-        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1400&q=82"
-             alt="Stock photo of a modern small home"
-             width="1400" height="1050" loading="lazy">
+        <picture><source srcset="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?fit=crop&w=1400&q=82&fm=webp" type="image/webp"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?fit=crop&w=1400&q=82&fm=jpg" alt="Stock photo of a modern small home" width="1400" height="933" loading="lazy" decoding="async"></picture>
         <figcaption class="caption">Stock photo (Unsplash). Not a San Diego project.</figcaption>
       </figure>
     </div>
