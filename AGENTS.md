@@ -1,5 +1,9 @@
 # Contributor notes
 
+## Headings and publishing
+
+H1s must plainly describe the page, never slogans. Fact-check all AI-assisted text, including titles, meta descriptions, alt text, and schema, before publishing. Never bump review dates without an actual re-check.
+
 ## Section order
 
 Put the most engaging block directly under the intro or hero. Use this order when the page has them:
