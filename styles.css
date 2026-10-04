@@ -16,6 +16,10 @@
   box-sizing: border-box;
 }
 
+picture {
+  display: contents;
+}
+
 html,
 body {
   margin: 0;
@@ -1081,6 +1085,53 @@ p {
   text-align: center;
 }
 
+.byline {
+  margin: 0.15rem 0 0.85rem;
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.byline a {
+  color: var(--brand);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.jadu-hero .byline a {
+  color: #fff;
+}
+
+.author-page .eyebrow {
+  color: var(--brand);
+}
+
+.author-role {
+  font-size: 1.2rem;
+  color: var(--ink);
+  max-width: 40rem;
+  margin: 0.35rem 0 1.25rem;
+}
+
+.author-page h2 {
+  font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+  margin-top: 1.6rem;
+}
+
+.author-guides {
+  margin: 0.4rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.author-guides li {
+  margin: 0.35rem 0;
+}
+
+.author-guides a {
+  color: var(--brand);
+  font-weight: 700;
+}
+
 .site-footer {
   margin-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -1091,8 +1142,15 @@ p {
 .footer-wrap {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem 1.5rem;
+  flex-wrap: wrap;
   color: #e7f1ff;
   font-size: 0.95rem;
+}
+
+.footer-wrap p:last-child {
+  max-width: 68ch;
 }
 
 .site-footer a {

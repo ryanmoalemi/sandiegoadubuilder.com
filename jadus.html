@@ -15,7 +15,7 @@
     <title>Junior ADUs (JADUs) in San Diego</title>
     <meta name="description" content="How junior ADUs work in San Diego: size limits, efficiency kitchens, bathrooms, owner occupancy, permits, and conversion choices." />
     <link rel="canonical" href="https://sandiegoadubuilder.com/jadus.html" />
-    <link rel="stylesheet" href="styles.css?v=20261001-1" />
+    <link rel="stylesheet" href="styles.css?v=20261004-2" />
     <style>
       :root {
         --jadu-ink: #17211d;
@@ -107,7 +107,7 @@
         display: grid;
         align-items: end;
         isolation: isolate;
-        background: linear-gradient(90deg, rgba(13, 21, 17, 0.91) 0%, rgba(13, 21, 17, 0.69) 47%, rgba(13, 21, 17, 0.20) 100%), url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=2000&q=86") center / cover no-repeat;
+        background: linear-gradient(90deg, rgba(13, 21, 17, 0.91) 0%, rgba(13, 21, 17, 0.69) 47%, rgba(13, 21, 17, 0.20) 100%), image-set(url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?fit=crop&w=2000&q=86&fm=webp") type("image/webp"), url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?fit=crop&w=2000&q=86&fm=jpg") type("image/jpeg")) center / cover no-repeat;
       }
 
       .jadu-hero::after {
@@ -333,15 +333,15 @@
       }
 
       .jadu-photo-kitchen {
-        background-image: linear-gradient(rgba(23, 33, 29, 0.08), rgba(23, 33, 29, 0.08)), url("https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=1600&q=86");
+        background-image: linear-gradient(rgba(23, 33, 29, 0.08), rgba(23, 33, 29, 0.08)), image-set(url("https://images.unsplash.com/photo-1554995207-c18c203602cb?fit=crop&w=1600&q=86&fm=webp") type("image/webp"), url("https://images.unsplash.com/photo-1554995207-c18c203602cb?fit=crop&w=1600&q=86&fm=jpg") type("image/jpeg"));
       }
 
       .jadu-photo-bedroom {
-        background-image: linear-gradient(rgba(23, 33, 29, 0.08), rgba(23, 33, 29, 0.08)), url("https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1600&q=86");
+        background-image: linear-gradient(rgba(23, 33, 29, 0.08), rgba(23, 33, 29, 0.08)), image-set(url("https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?fit=crop&w=1600&q=86&fm=webp") type("image/webp"), url("https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?fit=crop&w=1600&q=86&fm=jpg") type("image/jpeg"));
       }
 
       .jadu-photo-bath {
-        background-image: linear-gradient(rgba(23, 33, 29, 0.08), rgba(23, 33, 29, 0.08)), url("https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1600&q=86");
+        background-image: linear-gradient(rgba(23, 33, 29, 0.08), rgba(23, 33, 29, 0.08)), image-set(url("https://images.unsplash.com/photo-1620626011761-996317b8d101?fit=crop&w=1600&q=86&fm=webp") type("image/webp"), url("https://images.unsplash.com/photo-1620626011761-996317b8d101?fit=crop&w=1600&q=86&fm=jpg") type("image/jpeg"));
       }
 
       .jadu-split-copy {
@@ -481,7 +481,7 @@
 
       .jadu-band {
         padding: 110px 0;
-        background: linear-gradient(90deg, rgba(20, 29, 25, 0.88), rgba(20, 29, 25, 0.46)), url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=2000&q=86") center / cover no-repeat;
+        background: linear-gradient(90deg, rgba(20, 29, 25, 0.88), rgba(20, 29, 25, 0.46)), image-set(url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?fit=crop&w=2000&q=86&fm=webp") type("image/webp"), url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?fit=crop&w=2000&q=86&fm=jpg") type("image/jpeg")) center / cover no-repeat;
       }
 
       .jadu-band-content {
@@ -669,6 +669,7 @@
   ]
 }
 </script>
+<link rel="preload" as="image" type="image/webp" href="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?fit=crop&w=2000&q=86&fm=webp" fetchpriority="high">
 </head>
   <body>
     <header class="site-header">
@@ -702,7 +703,9 @@
       <section class="jadu-hero">
         <div class="jadu-container jadu-hero-inner">
           <p class="jadu-eyebrow">Junior Accessory Dwelling Units</p>
-          <h1>Make more room inside the home you already own.</h1>
+          <h1>Junior ADUs (JADUs) in San Diego</h1>
+          <p class="jadu-hero-copy">Make more room inside the home you already own.</p>
+<p class="byline"><a href="/authors/joe-mark.html">By Joe Mark, architectural draftsman</a></p>
 <p>Last reviewed June 30, 2026</p>
           <p class="jadu-hero-copy">
             A Junior Accessory Dwelling Unit, or JADU, can transform an existing bedroom, attached garage or underused part of a San Diego home into a compact independent living space of up to 500 square feet.
@@ -1278,6 +1281,12 @@
   "url": "https://sandiegoadubuilder.com/jadus.html",
   "description": "How junior ADUs work in San Diego: size limits, efficiency kitchens, bathrooms, owner occupancy, permits, and conversion choices.",
   "dateModified": "2026-06-30",
+  "author": {
+    "@type": "Person",
+    "name": "Joe Mark",
+    "url": "https://sandiegoadubuilder.com/authors/joe-mark.html",
+    "jobTitle": "Architectural Draftsman"
+  },
   "publisher": {
     "@type": "Organization",
     "name": "San Diego ADU Guide",
@@ -1338,7 +1347,7 @@
     <footer class="site-footer">
       <div class="container footer-wrap">
         <p>&copy; <span id="year"></span> San Diego ADU Guide</p>
-        <p>Information guide only. Not a contractor. Researched and drafted with AI help. <a href="/about.html#how-this-site-is-made">How this site is made</a></p>
+        <p>Information guide only. Not a contractor. Written with AI help from official city and county sources, then reviewed by <a href="/authors/joe-mark.html">Joe Mark</a>, an architectural draftsman with 50 years of experience and more than 10,000 approved building permits in Southern California. AI speeds up the research and drafting; Joe checks the permit facts. <a href="/about.html#how-this-site-is-made">How this site is made</a> · <a href="/sitemap.html">Site map</a></p>
       </div>
     </footer>
 

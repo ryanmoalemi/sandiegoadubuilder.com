@@ -1,8 +1,21 @@
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join, relative } from "node:path";
+import { syncHtmlSitemap } from "./sync-html-sitemap.mjs";
 
 const root = new URL("..", import.meta.url).pathname;
 const failures = [];
+
+try {
+  const sitemapSync = syncHtmlSitemap();
+  for (const warning of sitemapSync.warnings) console.warn(warning);
+  if (sitemapSync.added.length) {
+    console.log(
+      `HTML sitemap auto-added ${sitemapSync.added.length} URL(s) without blocking publish: ${sitemapSync.added.join(", ")}`
+    );
+  }
+} catch (error) {
+  console.warn(`HTML sitemap sync failed open and did not block publish: ${error.message}`);
+}
 
 function fail(message) {
   failures.push(message);
@@ -256,6 +269,44 @@ for (const loc of locs) {
 }
 if (!locs.includes("https://sandiegoadubuilder.com/about.html")) {
   fail("sitemap is missing about.html");
+}
+if (!locs.includes("https://sandiegoadubuilder.com/sitemap.html")) {
+  fail("sitemap is missing sitemap.html");
+}
+
+const htmlSitemap = readFileSync(join(root, "sitemap.html"), "utf8");
+if (!/<h1>\s*Site map\s*<\/h1>/i.test(htmlSitemap)) fail("sitemap.html H1 must be Site map");
+if (!/name=["']robots["'][^>]*content=["'][^"']*index,\s*follow/i.test(htmlSitemap)
+  && !/content=["'][^"']*index,\s*follow[^"']*["'][^>]*name=["']robots["']/i.test(htmlSitemap)) {
+  fail("sitemap.html must be index, follow");
+}
+if (!htmlSitemap.includes('rel="canonical" href="https://sandiegoadubuilder.com/sitemap.html"')
+  && !htmlSitemap.includes("rel='canonical' href='https://sandiegoadubuilder.com/sitemap.html'")) {
+  fail("sitemap.html canonical must be https://sandiegoadubuilder.com/sitemap.html");
+}
+if (/entitymap\.html/i.test(htmlSitemap)) fail("sitemap.html must not list entitymap.html");
+const sitemapGroups = [...htmlSitemap.matchAll(/<ul\b[^>]*data-sitemap-group="[^"]+"[^>]*>[\s\S]*?<\/ul>/gi)]
+  .map((match) => match[0])
+  .join("\n");
+for (const loc of locs) {
+  const pathname = new URL(loc).pathname;
+  const href = pathname === "/" ? 'href="/"' : `href="${pathname}"`;
+  if (!sitemapGroups.includes(href)) {
+    console.warn(`HTML sitemap is still missing ${loc} after auto-add. Publishing is not blocked.`);
+  }
+}
+
+const robots = readFileSync(join(root, "robots.txt"), "utf8");
+const robotGroups = robots.split(/\n(?=User-agent:)/);
+for (const group of robotGroups) {
+  const agentMatch = group.match(/User-agent:\s*(\S+)/);
+  if (!agentMatch) continue;
+  if (!group.includes("Disallow: /AGENTS.md") || !group.includes("Disallow: /README.md")) {
+    fail(`robots.txt group ${agentMatch[1]} is missing Disallow for /AGENTS.md and /README.md`);
+  }
+}
+if (!robots.includes("Sitemap: https://sandiegoadubuilder.com/sitemap.xml")) {
+  fail("robots.txt is missing the sitemap line");
 }
 
 for (const jsonName of ["entitymap.json", "adu-updates.json"]) {

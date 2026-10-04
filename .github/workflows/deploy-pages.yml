@@ -1,0 +1,149 @@
+name: Deploy site
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Optimize images
+        continue-on-error: true
+        run: |
+          python3 -m pip install --user pillow || echo "IMAGE_OPTIMIZE_FAILURE: could not install Pillow"
+          node scripts/optimize-images.mjs
+
+      - name: Check site
+        run: node scripts/check-site.mjs
+
+      - name: Copy site for Pages
+        run: |
+          python3 - <<'PY'
+          import os
+          import shutil
+          import sys
+          from pathlib import Path
+
+          src = Path(".").resolve()
+          dst = src / "_site"
+          if dst.exists():
+              shutil.rmtree(dst)
+          dst.mkdir()
+          blocked = {".git", ".github", "docs", "review", "_site"}
+
+          def skip(rel):
+              return any(part in blocked or part.endswith(".md") for part in rel.parts)
+
+          for dirpath, dirnames, filenames in os.walk(src):
+              rel_dir = Path(dirpath).relative_to(src)
+              if skip(rel_dir):
+                  dirnames[:] = []
+                  continue
+              dirnames[:] = [name for name in dirnames if not skip(rel_dir / name)]
+              target = dst / rel_dir
+              target.mkdir(parents=True, exist_ok=True)
+              for name in filenames:
+                  rel = rel_dir / name
+                  if skip(rel):
+                      continue
+                  shutil.copy2(src / rel, target / name, follow_symlinks=False)
+
+          required = [".nojekyll", "index.html", "CNAME", "sitemap.xml", "robots.txt"]
+          missing = [name for name in required if not (dst / name).is_file()]
+          leaked = [
+              str(path.relative_to(dst))
+              for path in dst.rglob("*")
+              if path.name.endswith(".md") or any(part in {".github", "docs", "review"} for part in path.parts)
+          ]
+          if missing or leaked or (dst / "README.md").exists() or (dst / "AGENTS.md").exists():
+              print("missing:", missing)
+              print("leaked:", leaked)
+              sys.exit(1)
+          print("Copied site without markdown, .github, docs/, or review/")
+          PY
+
+      - name: Confirm pages do not link to excluded paths
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.parse import urlparse
+          import re
+          import sys
+
+          root = Path("_site")
+          refs = re.compile(
+              r"""(?:href|src|srcset)\s*=\s*['"]([^'"]+)['"]|url\(\s*['"]?([^'")]+)['"]?\s*\)""",
+              re.I,
+          )
+          hosts = {"", "sandiegoadubuilder.com", "www.sandiegoadubuilder.com"}
+          suffixes = {".html", ".css", ".js", ".mjs", ".svg", ".xml", ".json"}
+          bad = []
+
+          def excluded(url):
+              parsed = urlparse(url.strip())
+              if parsed.scheme in ("mailto", "tel", "javascript", "data"):
+                  return False
+              if url.strip().startswith("#"):
+                  return False
+              if parsed.scheme in ("http", "https") and parsed.netloc.lower() not in hosts:
+                  return False
+              path = (parsed.path or "").lower()
+              name = path.rsplit("/", 1)[-1]
+              return (
+                  name.endswith(".md")
+                  or path in {"/docs", "docs", "/review", "review", "/.github", ".github"}
+                  or path.startswith(("/docs/", "docs/", "/review/", "review/", "/.github/", ".github/"))
+              )
+
+          for path in root.rglob("*"):
+              if not path.is_file() or path.suffix.lower() not in suffixes:
+                  continue
+              text = path.read_text(encoding="utf-8", errors="ignore")
+              for match in refs.finditer(text):
+                  for url in match.groups():
+                      if url and excluded(url):
+                          bad.append(f"{path}: {url}")
+
+          if bad:
+              print("Site links to a path excluded from the Pages artifact:")
+              print("\n".join(bad))
+              sys.exit(1)
+          print("No site links to *.md, .github, docs/, or review/")
+          PY
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+          include-hidden-files: "true"
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
