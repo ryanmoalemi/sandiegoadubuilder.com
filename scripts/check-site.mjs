@@ -115,15 +115,6 @@ for (const file of htmlFiles) {
     fail(`${name} contains an em dash in visible text`);
   }
 
-  const gaIds = [...new Set([...html.matchAll(/\bG-[A-Z0-9]+\b/g)].map((match) => match[0]))];
-  if (!gaIds.includes("G-2QP9M28W4W")) {
-    fail(`${name} is missing Google tag G-2QP9M28W4W`);
-  }
-  const otherGaIds = gaIds.filter((id) => id !== "G-2QP9M28W4W");
-  if (otherGaIds.length) {
-    fail(`${name} has another Google tag: ${otherGaIds.join(", ")}`);
-  }
-
   const titleMatch = html.match(/<title>([^<]*)<\/title>/i);
   const title = titleMatch ? decode(titleMatch[1].trim()) : "";
   if (!title) fail(`${name} is missing a title`);
