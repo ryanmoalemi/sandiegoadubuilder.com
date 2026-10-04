@@ -16,6 +16,10 @@
   box-sizing: border-box;
 }
 
+picture {
+  display: contents;
+}
+
 html,
 body {
   margin: 0;
