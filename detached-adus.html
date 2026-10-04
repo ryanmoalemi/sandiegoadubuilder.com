@@ -26,7 +26,7 @@
     .checklist{list-style:none;padding:0;margin:16px 0 0}.checklist li{position:relative;padding-left:30px;margin:12px 0}.checklist li:before{content:"✓";position:absolute;left:0;top:0;width:21px;height:21px;border-radius:50%;background:var(--gold);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900}.spec-table{width:100%;border-collapse:collapse;margin:18px 0;border:1px solid var(--line);border-radius:14px;overflow:hidden}.spec-table th{background:var(--navy);color:#fff;text-align:left;padding:12px;font-size:14px}.spec-table td{padding:12px;border-top:1px solid var(--line);vertical-align:top}.spec-table tr:nth-child(even) td{background:#f8fbff}
     .steps{counter-reset:step;display:grid;gap:16px;margin-top:24px}.step{display:grid;grid-template-columns:70px 1fr;gap:18px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}.step:before{counter-increment:step;content:counter(step);width:54px;height:54px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:22px}.step h3{margin:0 0 6px}.neighborhoods{columns:3;column-gap:34px;margin-top:12px}.neighborhoods li{break-inside:avoid;margin:0 0 8px}.faq{border-top:1px solid var(--line)}details{border-bottom:1px solid var(--line);padding:18px 0}summary{cursor:pointer;font-weight:900;color:var(--navy);font-size:19px}details p{margin-bottom:0;color:#2d3951}.cta-band{background:linear-gradient(135deg,var(--navy),#07327d);color:#fff}.cta-band .section{padding-top:54px;padding-bottom:54px}.cta-box{display:grid;grid-template-columns:1.4fr .6fr;gap:28px;align-items:center}.cta-box h2{color:#fff}.cta-box p{color:#e7f1ff}footer{background:var(--navy);color:#fff}footer .section{padding-top:28px;padding-bottom:28px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.source-note{font-size:13px;color:#526079}
     @media (max-width:900px){.hero-inner,.intro-grid,.split,.cta-box{grid-template-columns:1fr}.card-grid{grid-template-columns:1fr}.quick-grid{grid-template-columns:1fr}.toc{position:relative;top:auto}.neighborhoods{columns:1}.nav-links{flex-wrap:wrap;row-gap:8px}.hero-visual{height:260px}}
-  </style>
+  .hero .byline{margin:0 0 14px;font-size:16px;font-weight:700;line-height:1.4;color:#fff}.hero .byline a{color:#fff;text-decoration:underline;text-underline-offset:2px}footer .section>div:last-child{flex:1 1 280px;min-width:0}</style>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -35,6 +35,12 @@
   "url": "https://sandiegoadubuilder.com/detached-adus.html",
   "description": "Planning notes for detached backyard ADUs in San Diego, including setbacks, utilities, floor plans, permits, costs, and rental use.",
   "dateModified": "2026-06-30",
+  "author": {
+    "@type": "Person",
+    "name": "Joe Mark",
+    "url": "https://sandiegoadubuilder.com/authors/joe-mark.html",
+    "jobTitle": "Architectural Draftsman"
+  },
   "publisher": {
     "@type": "Organization",
     "name": "San Diego ADU Guide",
@@ -73,6 +79,7 @@
     </nav></div></header>
 
   <section class="hero"><div class="hero-inner"><div><div class="eyebrow">Detached ADUs in San Diego</div><h1>Backyard ADUs built for San Diego lots, rental income, and family privacy.</h1>
+<p class="byline"><a href="/authors/joe-mark.html">By Joe Mark, architectural draftsman</a></p>
 <p>Last reviewed June 30, 2026</p><p>A detached ADU is the cleanest way to add a second home to a San Diego property without tying the new unit into the daily life of the main house. The details matter: side access, sewer route, panel capacity, roof height, fire zone, setbacks, drainage, privacy lines, parking, and how the unit will actually be used.</p><div class="hero-actions"><a class="btn btn-primary" href="/adu-feasibility-studies.html">Feasibility guide</a><a class="btn btn-secondary" href="/adu-cost.html">Estimate ADU cost</a></div></div><div class="hero-card"><div class="hero-visual"><img src="/assets/images/projects/ai-illustration-backyard-adu.png" alt="AI-generated illustration of a backyard ADU. Not a real project."></div><p class="ai-illustration-caption">AI-generated illustration of a backyard ADU. Not a real project.</p><div class="quick-grid"><div class="quick"><b>Best for</b><span>Rental income, parents, adult children, guest house use, long-term flexibility</span></div><div class="quick"><b>Watch-outs</b><span>Utilities, stormwater, fire access, privacy, slope, construction staging</span></div><div class="quick"><b>Planning key</b><span>Confirm jurisdiction, buildable envelope, service runs, and permit path first</span></div></div></div></div></section>
 
   <main>
@@ -102,6 +109,6 @@
 
     <section class="cta-band"><div class="section"><div class="cta-box"><div><h2>Planning a detached ADU in San Diego?</h2><p>Start with feasibility, not a generic floor plan. Check the lot, access, utilities, setbacks, fire conditions, layout goals, and rental or family-use strategy before choosing a floor plan. For current local rules, see our <a href="san-diego-adus.html">San Diego ADU regulations page</a>. To understand financing options, see our <a href="adu-financing.html">ADU financing guide</a>.</p></div><div><a class="btn btn-primary" href="https://www.sandiego.gov/development-services/news-programs/programs/companion-junior-units" target="_blank" rel="noopener">City of San Diego ADU page</a></div></div></div></section>
 </main>
-  <footer><div class="section"><div>© 2026 San Diego ADU Guide</div><div>Information guide only. Not a contractor. Researched and drafted with AI help. <a href="/about.html#how-this-site-is-made">How this site is made</a></div></div></footer>
+  <footer><div class="section"><div>© 2026 San Diego ADU Guide</div><div>Information guide only. Not a contractor. Written with AI help from official city and county sources, then reviewed by <a href="/authors/joe-mark.html">Joe Mark</a>, an architectural draftsman with 50 years of experience and more than 10,000 approved building permits in Southern California. AI speeds up the research and drafting; Joe checks the permit facts. <a href="/about.html#how-this-site-is-made">How this site is made</a></div></div></footer>
 </body>
 </html>
