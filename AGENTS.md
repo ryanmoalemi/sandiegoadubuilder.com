@@ -18,3 +18,7 @@ Order everything else from most interesting to least interesting. End with metho
 Move existing sections. Do not rewrite or delete copy to change the order. The full hero title must stay above the fold on desktop and mobile.
 
 On `adu-handbook.html`, leave the jump nav and the embedded handbook where they are. An open change adds the City versus County comparison in that spot, directly above the embed.
+
+## Google Analytics
+
+Every public HTML page must include the Google tag `G-2QP9M28W4W` copied from `index.html`, placed first in `<head>`, and no other `G-` ID. `node scripts/check-site.mjs` fails if any public HTML page is missing `G-2QP9M28W4W` or contains a different `G-` ID.

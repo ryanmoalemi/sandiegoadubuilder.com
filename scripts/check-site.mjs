@@ -104,6 +104,15 @@ function rel(file) {
 for (const file of htmlFiles) {
   const name = rel(file);
   const html = readFileSync(file, "utf8");
+  const gaIds = [...new Set([...html.matchAll(/\bG-[A-Z0-9]+\b/g)].map((match) => match[0]))];
+  if (!gaIds.includes("G-2QP9M28W4W")) {
+    fail(`${name} is missing Google tag G-2QP9M28W4W`);
+  }
+  const otherGaIds = gaIds.filter((id) => id !== "G-2QP9M28W4W");
+  if (otherGaIds.length) {
+    fail(`${name} has another Google tag: ${otherGaIds.join(", ")}`);
+  }
+
   const visible = visibleText(html);
 
   for (const rule of BANNED) {
