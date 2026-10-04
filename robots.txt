@@ -1,28 +1,46 @@
 User-agent: *
 Allow: /
+Disallow: /AGENTS.md
+Disallow: /README.md
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /AGENTS.md
+Disallow: /README.md
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /AGENTS.md
+Disallow: /README.md
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /AGENTS.md
+Disallow: /README.md
 
 User-agent: Perplexity-User
 Allow: /
+Disallow: /AGENTS.md
+Disallow: /README.md
 
 User-agent: Claude-SearchBot
 Allow: /
+Disallow: /AGENTS.md
+Disallow: /README.md
 
 User-agent: Claude-User
 Allow: /
+Disallow: /AGENTS.md
+Disallow: /README.md
 
 User-agent: Googlebot
 Allow: /
+Disallow: /AGENTS.md
+Disallow: /README.md
 
 User-agent: Bingbot
 Allow: /
+Disallow: /AGENTS.md
+Disallow: /README.md
 
 Sitemap: https://sandiegoadubuilder.com/sitemap.xml

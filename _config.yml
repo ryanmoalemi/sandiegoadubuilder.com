@@ -1,0 +1,7 @@
+# GitHub Pages publishes this repository with Jekyll. Markdown notes stay in
+# the repo and are left out of the published site. Jekyll 3 matches these
+# names exactly, so each file is listed. The review folder is draft-only.
+exclude:
+  - README.md
+  - AGENTS.md
+  - review
