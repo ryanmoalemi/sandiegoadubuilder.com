@@ -93,6 +93,10 @@ const GUIDE_PAGES = new Set([
   "about.html"
 ]);
 
+const SCHEMA_DATE_KEYS = new Set(["dateModified", "datePublished", "dateCreated"]);
+// Google ProfilePage types dateCreated/dateModified as DateTime. Date-only values fail Search Console.
+const SCHEMA_DATETIME = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/;
+
 const files = walk(root);
 const htmlFiles = files.filter((file) => file.endsWith(".html"));
 const descriptions = new Map();
@@ -236,6 +240,9 @@ for (const file of htmlFiles) {
         if (extra.length) fail(`${name} publisher Organization has extra fields: ${extra.join(", ")}`);
       }
       for (const [key, value] of Object.entries(node)) {
+        if (SCHEMA_DATE_KEYS.has(key) && typeof value === "string" && !SCHEMA_DATETIME.test(value)) {
+          fail(`${name} JSON-LD ${key} must be an ISO 8601 datetime with a timezone offset: ${value}`);
+        }
         stack.push({ node: value, key });
       }
     }
