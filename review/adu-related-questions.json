@@ -1,0 +1,112 @@
+{
+  "site": "sandiegoadubuilder.com",
+  "title": "ADU related questions from official sources",
+  "meta_description": "Related questions added to the San Diego ADU Guide FAQs, answered from city, county, state, and lender pages.",
+  "summary": "Home adds permit cost from City Information Bulletin 501, with a link to the permitting fee section, and City versus County rules from the City DSD page and the County PDS page, linking San Diego ADUs and the ADU Handbook. Permitting adds status lookup from the City records page, OpenDSD, Permit Finder, and Accela, plus the County Accela guide; a 30 to 60 day decision window from the HCD handbook and City Bulletin 400; and fee waivers from HCD and Government Code 66324, the County waiver that ended January 9, 2024, and City Bulletin 400. Garage adds an ADU above a garage and whether a conversion is an ADU, from HCD and Bulletin 400, with the cost-guide garage section. Pre-approved plans add the City list page and County Plan A through F PDFs, plus prefab versus pre-approved from HCD. Rental income adds Fannie Mae Selling Guide B3-3.1-08 and B3-3.8-02, the Freddie Mac Chapter 5306 fact sheet, and FHA Mortgagee Letter 2023-17, with a link to the financing page.",
+  "uniqueness": {
+    "summary": "Each new answer names the official page it comes from, including the County plan PDFs and the lender selling guides.",
+    "points": [
+      "Home: How much does an ADU permit cost in San Diego? Source: City of San Diego Information Bulletin 501, linked to the permitting fee section.",
+      "Home: How do City and County ADU requirements differ? Sources: City DSD ADU page and County PDS ADU page, linking San Diego ADUs and the ADU Handbook.",
+      "Permitting: How do I look up permit status? Sources: City DSD records page, OpenDSD, Permit Finder, Accela, and the County Accela status guide.",
+      "Permitting: How long does an ADU permit decision take? Sources: California HCD ADU Handbook (60 days) and City Bulletin 400 (30-day preapproved review).",
+      "Permitting: Are ADU permit fees waived? Sources: HCD handbook and Government Code 66324, County ADU page, City Bulletin 400.",
+      "Garage: Can I put an ADU above a garage? Sources: HCD handbook, Government Code 66314, City Bulletin 400.",
+      "Garage: Is a garage conversion an ADU? Sources: HCD handbook and City Bulletin 400, with the cost-guide garage section.",
+      "Pre-approved plans: Where are the official PDFs? Sources: City ADU page and County Dwelling Unit Building Plans PDFs A through F.",
+      "Pre-approved plans: Prefab versus pre-approved. Source: California HCD ADU Handbook and City Bulletin 400.",
+      "Rental income: Fannie Mae, Freddie Mac, and FHA rules. Sources: Fannie Mae Selling Guide B3-3.1-08 and B3-3.8-02, Freddie Mac ADU fact sheet (Guide Chapter 5306), FHA Mortgagee Letter 2023-17, linked to the financing page."
+    ]
+  },
+  "url_path": "/",
+  "files": [
+    "index.html",
+    "adu-permitting.html",
+    "adu-garage-conversions.html",
+    "pre-approved-adu-plans.html",
+    "adu-rental-income.html",
+    "adu-cost.html"
+  ],
+  "hero_image": "assets/images/projects/ai-illustration-backyard-adu.png",
+  "unique": [
+    "Direct links to the County Plan A through F PDFs and the City list of accepted plans",
+    "Permit-status steps for both City Development Services and County Planning and Development Services",
+    "Lender income caps quoted from the Fannie Mae Selling Guide, the Freddie Mac fact sheet, and FHA Mortgagee Letter 2023-17"
+  ],
+  "unverified": [
+    "Joe Mark has not reviewed the permit facts yet. That includes the 30 to 60 day decision window, the impact-fee exemption, the ended County waiver, the above-garage setback, and which plan PDFs the City accepts.",
+    "The HCD handbook summary says ADUs up to 750 square feet are exempt from impact fees. A handbook Q&A also says less than 750 square feet. Confirm which sentence to keep.",
+    "The current HCD handbook uses a four-foot side and rear setback for new ADU floor area. It does not keep an older five-foot rule written only for space above a garage."
+  ],
+  "scorecard": {
+    "overall": 7,
+    "max": 10,
+    "grade": "Needs work",
+    "categories": [
+      {
+        "name": "Accuracy",
+        "score": 8,
+        "max": 10,
+        "reason": "The numbers and rules are taken from the named official pages. Joe Mark has not reviewed the permit facts yet."
+      },
+      {
+        "name": "Information gain",
+        "score": 7,
+        "max": 10,
+        "reason": "The new questions cover permit lookup, timing, waivers, garage status, plan PDFs, and lender income rules."
+      },
+      {
+        "name": "Effort and replication cost",
+        "score": 6,
+        "max": 10,
+        "reason": "Each answer was checked against the current city, county, HCD, or lender page."
+      },
+      {
+        "name": "Originality",
+        "score": 5,
+        "max": 10,
+        "reason": "The facts belong to the agencies. The work is placing them in the existing FAQs with the right links."
+      },
+      {
+        "name": "Experience and expertise",
+        "score": 6,
+        "max": 10,
+        "reason": "Written from the published guides, and still waiting on Joe Mark's permit review."
+      },
+      {
+        "name": "Main content and layout",
+        "score": 8,
+        "max": 10,
+        "reason": "The questions sit in the existing FAQ blocks and in FAQPage JSON-LD."
+      },
+      {
+        "name": "Transparency",
+        "score": 9,
+        "max": 10,
+        "reason": "Each answer names the official page it comes from."
+      },
+      {
+        "name": "Writing craft",
+        "score": 8,
+        "max": 10,
+        "reason": "The sentences are short and specific, and they do not use an em dash."
+      },
+      {
+        "name": "People-first purpose",
+        "score": 8,
+        "max": 10,
+        "reason": "A reader can look up a permit, a fee rule, a plan PDF, or a lender rule from the answer."
+      },
+      {
+        "name": "Human voice",
+        "score": 7,
+        "max": 10,
+        "reason": "The wording is plain. Statute-like lines were shortened so a homeowner can follow them."
+      }
+    ],
+    "info_gain": "Official permit, plan, and lender answers added to the FAQs that did not have them.",
+    "ai_flags": [
+      "The timing answer first read like a statute. It was rewritten as a 30 to 60 day decision window, with construction time left out."
+    ]
+  }
+}
